@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perl Tutorial</title>
+    <link rel="stylesheet" href="../style/perl.css">
+</head>
+<body>
+    <div class="intro">
+        <div class="clearer"></div>
+<p>Perl is a general-purpose programming language originally developed for text manipulation and now used for a wide range of tasks including system administration, web development, network programming, GUI development, and more.</p>
+<h2>What is Perl?</h2>
+<ul class="list">
+<li><p>Perl is a stable, cross platform programming language.</p></li>
+<li><p>Though Perl is not officially an acronym but few people used it as <b>Practical Extraction and Report Language</b>.</p></li>
+<li><p>It is used for mission critical projects in the public and private sectors.</p></li>
+<li><p>Perl is an <i>Open Source</i> software, licensed under its <i>Artistic License</i>, or the <i>GNU General Public License (GPL)</i>.</p></li>
+<li><p>Perl was created by Larry Wall.</p></li>
+<li><p>Perl 1.0 was released to usenet's alt.comp.sources in 1987.</p></li>
+<li><p>At the time of writing this tutorial, the latest version of perl was 5.16.2.</p></li>
+<li><p>Perl is listed in the <i>Oxford English Dictionary</i>.</p></li>
+</ul>
+<p>PC Magazine announced Perl as the finalist for its 1998 Technical Excellence Award in the Development Tool category.</p>
+<h2>Perl Features</h2>
+<ul class="list">
+<li><p>Perl takes the best features from other languages, such as C, awk, sed, sh, and BASIC, among others.</p></li>
+<li><p>Perls database integration interface DBI supports third-party databases including Oracle, Sybase, Postgres, MySQL and others.</p></li>
+<li><p>Perl works with HTML, XML, and other mark-up languages.</p></li>
+<li><p>Perl supports Unicode.</p></li>
+<li><p>Perl is Y2K compliant.</p></li>
+<li><p>Perl supports both procedural and object-oriented programming.</p></li>
+<li><p>Perl interfaces with external C/C++ libraries through XS or SWIG.</p></li>
+<li><p>Perl is extensible. There are over 20,000 third party modules available from the Comprehensive Perl Archive Network (<a target="_blank" rel="nofollow" href="https://cpan.perl.org">CPAN</a>).</p></li>
+<li><p>The Perl interpreter can be embedded into other systems.</p></li>
+</ul>
+<h2>Perl and the Web</h2>
+<ul class="list">
+<li><p>Perl used to be the most popular web programming language due to its text manipulation capabilities and rapid development cycle.</p></li>
+<li><p>Perl is widely known as "<a rel="nofollow" target="_blank" href="https://www.google.com/search?q=the%20duct-tape%20of%20the%20Internet" >the duct-tape of the Internet</a>".</p></li>
+<li><p>Perl can handle encrypted Web data, including e-commerce transactions.</p></li>
+<li><p>Perl can be embedded into web servers to speed up processing by as much as 2000%.</p></li>
+<li><p>Perl's <a target="_blank" rel="nofollow" href="https://perl.apache.org">mod_perl</a> allows the Apache web server to embed a Perl interpreter.</p></li>
+<li><p>Perl's <a target="_blank" rel="nofollow" href="https://dbi.perl.org">DBI</a> package makes web-database integration easy.</p></li>
+</ul>
+<h2>Perl is Interpreted</h2>
+<p>Perl is an interpreted language, which means that your code can be run as is, without a compilation stage that creates a non portable executable program.</p>
+<p>Traditional compilers convert programs into machine language. When you run a Perl program, it's first compiled into a byte code, which is then converted ( as the program runs) into machine instructions. So it is not quite the same as shells, or Tcl, which are <b>strictly</b> interpreted without an intermediate representation.</p>
+<p>It is also not like most versions of C or C++, which are compiled directly into a machine dependent format. It is somewhere in between, along with <i>Python </i>and <i>awk</i> and Emacs .elc files.</p>
+    </div>
+    <div class="variables">
+        <p>Variables are the reserved memory locations to store values. This means that when you create a variable you reserve some space in memory.</p>
+<p>Based on the data type of a variable, the interpreter allocates memory and decides what can be stored in the reserved memory. Therefore, by assigning different data types to variables, you can store integers, decimals, or strings in these variables.</p>
+<p>We have learnt that Perl has the following three basic data types &minus;</p>
+<ul class="list">
+<li>Scalars</li>
+<li>Arrays</li>
+<li>Hashes</li>
+</ul>
+<p>Accordingly, we are going to use three types of variables in Perl. A <b>scalar</b> variable will precede by a dollar sign ($) and it can store either a number, a string, or a reference. An <b>array</b> variable will precede by sign &commat; and it will store ordered lists of scalars. Finaly, the <b>Hash</b> variable will precede by sign % and will be used to store sets of key/value pairs.</p>
+<p>Perl maintains every variable type in a separate namespace. So you can, without fear of conflict, use the same name for a scalar variable, an array, or a hash. This means that $foo and &commat;foo are two different variables.</p>
+<h2>Creating Variables</h2>
+<p>Perl variables do not have to be explicitly declared to reserve memory space. The declaration happens automatically when you assign a value to a variable. The equal sign (=) is used to assign values to variables.</p>
+<p>Keep a note that this is mandatory to declare a variable before we use it if we use <b>use strict</b> statement in our program.</p>
+<p>The operand to the left of the = operator is the name of the variable, and the operand to the right of the = operator is the value stored in the variable. For example &minus;</p>
+<pre class="prettyprint notranslate">
+$age = 25;             # An integer assignment
+$name = "John Paul";   # A string 
+$salary = 1445.50;     # A floating point
+</pre>
+<p>Here 25, "John Paul" and 1445.50 are the values assigned to <i>$age</i>, <i>$name</i> and <i>$salary</i> variables, respectively. Shortly we will see how we can assign values to arrays and hashes.</p>
+<h2>Scalar Variables</h2>
+<p>A scalar is a single unit of data. That data might be an integer number, floating point, a character, a string, a paragraph, or an entire web page. Simply saying it could be anything, but only a single thing.</p>
+<p>Here is a simple example of using scalar variables &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/IGuTZl" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+$age = 25;             # An integer assignment
+$name = "John Paul";   # A string 
+$salary = 1445.50;     # A floating point
+
+print "Age = $age\n";
+print "Name = $name\n";
+print "Salary = $salary\n";
+</pre>
+<p>This will produce the following result &minus;</p>
+<pre class="result notranslate">
+Age = 25
+Name = John Paul
+Salary = 1445.5
+</pre>
+<h2>Array Variables</h2>
+<p>An array is a variable that stores an ordered list of scalar values. Array variables are preceded by an "at" (&commat;) sign. To refer to a single element of an array, you will use the dollar sign ($) with the variable name followed by the index of the element in square brackets.</p>
+<p>Here is a simple example of using array variables &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/VSk2OS" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+&commat;ages = (25, 30, 40);             
+&commat;names = ("John Paul", "Lisa", "Kumar");
+
+print "\$ages[0] = $ages[0]\n";
+print "\$ages[1] = $ages[1]\n";
+print "\$ages[2] = $ages[2]\n";
+print "\$names[0] = $names[0]\n";
+print "\$names[1] = $names[1]\n";
+print "\$names[2] = $names[2]\n";
+</pre>
+<p>Here we used escape sign (\) before the $ sign just to print it. Other Perl will understand it as a variable and will print its value. When executed, this will produce the following result &minus;</p>
+<pre class="result notranslate">
+$ages[0] = 25
+$ages[1] = 30
+$ages[2] = 40
+$names[0] = John Paul
+$names[1] = Lisa
+$names[2] = Kumar
+</pre>
+<h2>Hash Variables</h2>
+<p>A hash is a set of <b>key/value</b> pairs. Hash variables are preceded by a percent (%) sign. To refer to a single element of a hash, you will use the hash variable name followed by the "key" associated with the value in curly brackets.</p>
+<p>Here is a simple example of using hash variables &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/DKJp8u" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+%data = ('John Paul', 45, 'Lisa', 30, 'Kumar', 40);
+
+print "\$data{'John Paul'} = $data{'John Paul'}\n";
+print "\$data{'Lisa'} = $data{'Lisa'}\n";
+print "\$data{'Kumar'} = $data{'Kumar'}\n";
+</pre>
+<p>This will produce the following result &minus;</p>
+<pre class="result notranslate">
+$data{'John Paul'} = 45
+$data{'Lisa'} = 30
+$data{'Kumar'} = 40
+</pre>
+<h2>Variable Context</h2>
+<p>Perl treats same variable differently based on Context, i.e., situation where a variable is being used. Let's check the following example &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/hHxTSR" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+&commat;names = ('John Paul', 'Lisa', 'Kumar');
+
+&commat;copy = &commat;names;
+$size = &commat;names;
+
+print "Given names are : &commat;copy\n";
+print "Number of names are : $size\n";
+</pre>
+<p>This will produce the following result &minus;</p>
+<pre class="result notranslate">
+Given names are : John Paul Lisa Kumar
+Number of names are : 3
+</pre>
+<p>Here &commat;names is an array, which has been used in two different contexts. First we copied it into anyother array, i.e., list, so it returned all the elements assuming that context is list context. Next we used the same array and tried to store this array in a scalar, so in this case it returned just the number of elements in this array assuming that context is scalar context. Following table lists down the various contexts &minus;</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Context &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>Scalar</b></p>
+<p>Assignment to a scalar variable evaluates the right-hand side in a scalar context.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>List</b></p>
+<p>Assignment to an array or a hash evaluates the right-hand side in a list context.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>Boolean</b></p>
+<p>Boolean context is simply any place where an expression is being evaluated to see whether it's true or false.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>Void</b></p>
+<p>This context not only doesn't care what the return value is, it doesn't even want a return value.</p></td>
+</tr>
+<tr>
+    </div>
+    <div class="ifelse">
+        <p>Perl conditional statements helps in the decision making, which require that the programmer specifies one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.</p>
+<p>Following is the general from of a typical decision making structure found in most of the programming languages &minus;</p>
+<img src="/perl/images/decision_making.jpg" alt="Decision making statements in Perl" />
+<p>The number 0, the strings '0' and "" , the empty list () , and undef are all <b>false</b> in a boolean context and all other values are <b>true</b>. Negation of a true value by <b>!</b> or <b>not</b> returns a special false value.</p>
+<p>Perl programming language provides the following types of conditional statements.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;width:5%">Sr.No.</th>
+<th style="text-align:center;">Statement &amp; Description</th></tr>
+<tr>
+<td class="ts">1</td>
+<td><h3>if statement</h3>
+<p>An <b>if statement</b> consists of a boolean expression followed by one or more statements.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><h3></h3>if...else statement</h3>
+<p>An <b>if statement</b> can be followed by an optional <b>else statement</b>.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><h3>if...elsif...else statement</h3>
+<p>An <b>if statement</b> can be followed by an optional <b>elsif statement</b> and then by an optional <b>else statement</b>.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><h3>unless statement</h3>
+<p>An <b>unless statement</b> consists of a boolean expression followed by one or more statements.</p></td>
+</tr>
+<tr>
+<td class="ts">5</td>
+<td><h3>unless...else statement</h3>
+<p>An <b>unless statement</b> can be followed by an optional <b>else statement</b>.</p></td>
+</tr>
+<tr>
+<td class="ts">6</td>
+<td><h3>unless...elsif..else statement</h3>
+<p>An <b>unless statement</b> can be followed by an optional <b>elsif statement</b> and then by an optional <b>else statement</b>.</p></td>
+</tr>
+<tr>
+<td class="ts">7</td>
+<td><h3>switch statement</h3>
+<p>With the latest versions of Perl, you can make use of the <b>switch</b> statement. which allows a simple way of comparing a variable value against various conditions.</p></td>
+</tr>
+</table>
+<h2>The ? : Operator</h2>
+<p>Let's check the <b>conditional operator ? :</b>which can be used to replace <b>if...else</b> statements. It has the following general form &minus;</p>
+<pre class="result notranslate">
+Exp1 ? Exp2 : Exp3;
+</pre>
+<p>Where Exp1, Exp2, and Exp3 are expressions. Notice the use and placement of the colon.</p>
+<p>The value of a ? expression is determined like this: Exp1 is evaluated. If it is true, then Exp2 is evaluated and becomes the value of the entire ? expression. If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression. Below is a simple example making use of this operator &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/AFTbii" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/local/bin/perl
+ 
+$name = "Ali";
+$age = 10;
+
+$status = ($age &gt; 60 )? "A senior citizen" : "Not a senior citizen";
+
+print "$name is  - $status\n";
+</pre>
+<p>This will produce the following result &minus;</p>
+<pre class="result notranslate">
+Ali is - Not a senior citizen
+</pre>
+    </div>
+    <div class="references">
+        <p>A Perl reference is a scalar data type that holds the location of another value which could be scalar, arrays, or hashes. Because of its scalar nature, a reference can be used anywhere, a scalar can be used.</p>
+<p>You can construct lists containing references to other lists, which can contain references to hashes, and so on. This is how the nested data structures are built in Perl.</p>
+<h2>Create References</h2>
+<p>It is easy to create a reference for any variable, subroutine or value by prefixing it with a backslash as follows &minus;</p>
+<pre class="result notranslate">
+$scalarref = \$foo;
+$arrayref  = \@ARGV;
+$hashref   = \%ENV;
+$coderef   = \&amp;handler;
+$globref   = \*foo;
+</pre>
+<p>You cannot create a reference on an I/O handle (filehandle or dirhandle) using the backslash operator but a reference to an anonymous array can be created using the square brackets as follows &minus;</p>
+<pre class="prettyprint notranslate">
+ $arrayref = [1, 2, ['a', 'b', 'c']];
+</pre>
+<p>Similar way you can create a reference to an anonymous hash using the curly brackets as follows &minus;</p>
+<pre class="prettyprint notranslate">
+$hashref = {
+   'Adam'  =&gt; 'Eve',
+   'Clyde' =&gt; 'Bonnie',
+};
+</pre>
+<p>A reference to an anonymous subroutine can be created by using sub without a subname as follows &minus;</p>
+<pre class="prettyprint notranslate">
+$coderef = sub { print "Boink!\n" };
+</pre>
+<h2>Dereferencing</h2>
+<p>Dereferencing returns the value from a reference point to the location. To dereference a reference simply use $, @ or % as prefix of the reference variable depending on whether the reference is pointing to a scalar, array, or hash. Following is the example to explain the concept &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/CvgiO6" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+$var = 10;
+
+# Now $r has reference to $var scalar.
+$r = \$var;
+
+# Print value available at the location stored in $r.
+print "Value of $var is : ", $$r, "\n";
+
+@var = (1, 2, 3);
+# Now $r has reference to @var array.
+$r = \@var;
+# Print values available at the location stored in $r.
+print "Value of @var is : ",  @$r, "\n";
+
+%var = ('key1' =&gt; 10, 'key2' =&gt; 20);
+# Now $r has reference to %var hash.
+$r = \%var;
+# Print values available at the location stored in $r.
+print "Value of %var is : ", %$r, "\n";
+</pre>
+<p>When above program is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Value of 10 is : 10
+Value of 1 2 3 is : 123
+Value of %var is : key220key110
+</pre>
+<p>If you are not sure about a variable type, then its easy to know its type using <b>ref</b>, which returns one of the following strings if its argument is a reference. Otherwise, it returns false &minus;</p>
+<pre class="result notranslate">
+SCALAR
+ARRAY
+HASH
+CODE
+GLOB
+REF
+</pre>
+<p>Let's try the following example &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/r8gNdB" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+$var = 10;
+$r = \$var;
+print "Reference type in r : ", ref($r), "\n";
+
+@var = (1, 2, 3);
+$r = \@var;
+print "Reference type in r : ", ref($r), "\n";
+
+%var = ('key1' =&gt; 10, 'key2' =&gt; 20);
+$r = \%var;
+print "Reference type in r : ", ref($r), "\n";
+</pre>
+<p>When above program is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Reference type in r : SCALAR
+Reference type in r : ARRAY
+Reference type in r : HASH
+</pre>
+<h2>Circular References</h2>
+<p>A circular reference occurs when two references contain a reference to each other. You have to be careful while creating references otherwise a circular reference can lead to memory leaks. Following is an example &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/6NQj9Y" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+ my $foo = 100;
+ $foo = \$foo;
+ 
+ print "Value of foo is : ", $$foo, "\n";
+</pre>
+<p>When above program is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Value of foo is : REF(0x9aae38)
+</pre>
+<h2>References to Functions</h2>
+<p>This might happen if you need to create a signal handler so you can produce a reference to a function by preceding that function name with \&amp; and to dereference that reference you simply need to prefix reference variable using ampersand &amp;. Following is an example &minus;</p>
+<div class="demo-view">
+<a href="http://tpcg.io/m2XPwu" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+# Function definition
+sub PrintHash {
+   my (%hash) = @_;
+   
+   foreach $item (%hash) {
+      print "Item : $item\n";
+   }
+}
+%hash = ('name' =&gt; 'Tom', 'age' =&gt; 19);
+
+# Create a reference to above function.
+$cref = \&amp;PrintHash;
+
+# Function call using reference.
+&amp;$cref(%hash);
+</pre>
+<p>When above program is executed, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Item : name
+Item : Tom
+Item : age
+Item : 19
+</pre>
+    </div>
+    <div class="errorhandling">
+        <p>The execution and the errors always go together. If you are opening a file which does not exist. then if you did not handle this situation properly then your program is considered to be of bad quality.</p>
+<p>The program stops if an error occurs. So a proper error handling is used to handle various type of errors, which may occur during a program execution and take appropriate action instead of halting program completely.</p>
+<p>You can identify and trap an error in a number of different ways. Its very easy to trap errors in Perl and then handling them properly. Here are few methods which can be used.</p>
+<h2>The if statement</h2>
+<p>The <b>if statement</b> is the obvious choice when you need to check the return value from a statement; for example &minus;</p>
+<pre class="prettyprint notranslate">
+if(open(DATA, $file)) {
+   ...
+} else {
+   die "Error: Couldn't open the file - $!";
+}
+</pre>
+<p>Here variable $! returns the actual error message. Alternatively, we can reduce the statement to one line in situations where it makes sense to do so; for example &minus;</p>
+<pre class="prettyprint notranslate">
+open(DATA, $file) || die "Error: Couldn't open the file $!";
+</pre>
+<h2>The unless Function</h2>
+<p>The <b>unless</b> function is the logical opposite to if: statements can completely bypass the success status and only be executed if the expression returns false. For example &minus;</p>
+<pre class="prettyprint notranslate">
+unless(chdir("/etc")) {
+   die "Error: Can't change directory - $!";
+}
+</pre>
+<p>The <b>unless</b> statement is best used when you want to raise an error or alternative only if the expression fails. The statement also makes sense when used in a single-line statement &minus;</p>
+<pre class="prettyprint notranslate">
+die "Error: Can't change directory!: $!" unless(chdir("/etc"));
+</pre>
+<p>Here we die only if the chdir operation fails, and it reads nicely.</p>
+<h2>The ternary Operator</h2>
+<p>For very short tests, you can use the conditional operator <b>?:</b></p>
+<pre class="prettyprint notranslate">
+print(exists($hash{value}) ? 'There' : 'Missing',"\n");
+</pre>
+<p>It's not quite so clear here what we are trying to achieve, but the effect is the same as using an <b>if</b> or <b>unless</b> statement. The conditional operator is best used when you want to quickly return one of the two values within an expression or statement.</p>
+<h2>The warn Function</h2>
+<p>The warn function just raises a warning, a message is printed to STDERR, but no further action is taken. So it is more useful if you just want to print a warning for the user and proceed with rest of the operation &minus;</P>
+<pre class="prettyprint notranslate">
+chdir('/etc') or warn "Can't change directory";
+</pre>
+<h2>The die Function</h2>
+<p>The die function works just like warn, except that it also calls exit. Within a normal script, this function has the effect of immediately terminating execution. You should use this function in case it is useless to proceed if there is an error in the program &minus;</p>
+<pre class="prettyprint notranslate">
+chdir('/etc') or die "Can't change directory";
+</pre>
+<h2>Errors within Modules</h2>
+<p>There are two different situations we should be able to handle &minus;</p>
+<ul class="list">
+<li><p>Reporting an error in a module that quotes the module's filename and line number - this is useful when debugging a module, or when you specifically want to raise a module-related, rather than script-related, error.</p></li>
+<li><p>Reporting an error within a module that quotes the caller's information so that you can debug the line within the script that caused the error. Errors raised in this fashion are useful to the end-user, because they highlight the error in relation to the calling script's origination line.</p></li>
+</ul>
+<p>The <b>warn</b> and <b>die</b> functions work slightly differently than you would expect when called from within a module. For example, the simple module &minus;</p>
+<pre class="prettyprint notranslate">
+package T;
+
+require Exporter;
+@ISA = qw/Exporter/;
+@EXPORT = qw/function/;
+use Carp;
+
+sub function {
+   warn "Error in module!";
+}
+1;
+</pre>
+<p>When called from a script like below &minus;</p>
+<pre class="prettyprint notranslate">
+use T;
+function();
+</pre>
+<p>It will produce the following result &minus;</p>
+<pre class="result notranslate">
+Error in module! at T.pm line 9.
+</pre>
+<p>This is more or less what you might expected, but not necessarily what you want. From a module programmer's perspective, the information is useful because it helps to point to a bug within the module itself. For an end-user, the information provided is fairly useless, and for all but the hardened programmer, it is completely pointless.</p>
+<p>The solution for such problems is the Carp module, which provides a simplified method for reporting errors within modules that return information about the calling script. The Carp module provides four functions: carp, cluck, croak, and confess. These functions are discussed below.</p>
+<h2>The carp Function</h2>
+<p>The carp function is the basic equivalent of warn and prints the message to STDERR without actually exiting the script and printing the script name.</p>
+<pre class="prettyprint notranslate">
+package T;
+
+require Exporter;
+@ISA = qw/Exporter/;
+@EXPORT = qw/function/;
+use Carp;
+
+sub function {
+   carp "Error in module!";
+}
+1;
+</pre>
+<p>When called from a script like below &minus;</p>
+<pre class="prettyprint notranslate">
+use T;
+function();
+</pre>
+<p>It will produce the following result &minus;</p>
+<pre class="result notranslate">
+Error in module! at test.pl line 4
+</pre>
+<h2>The cluck Function</h2>
+<p>The cluck function is a sort of supercharged carp, it follows the same basic principle but also prints a stack trace of all the modules that led to the function being called, including the information on the original script.</p>
+<pre class="prettyprint notranslate">
+package T;
+
+require Exporter;
+@ISA = qw/Exporter/;
+@EXPORT = qw/function/;
+use Carp qw(cluck);
+
+sub function {
+   cluck "Error in module!";
+}
+1;
+</pre>
+<p>When called from a script like below &minus;</p>
+<pre class="prettyprint notranslate">
+use T;
+function();
+</pre>
+<p>It will produce the following result &minus;</p>
+<pre class="result notranslate">
+Error in module! at T.pm line 9
+   T::function() called at test.pl line 4
+</pre>
+<h2>The croak Function</h2>
+<p>The <b>croak</b> function is equivalent to <b>die</b>, except that it reports the caller one level up. Like die, this function also exits the script after reporting the error to STDERR &minus;</p>
+<pre class="prettyprint notranslate">
+package T;
+
+require Exporter;
+@ISA = qw/Exporter/;
+@EXPORT = qw/function/;
+use Carp;
+
+sub function {
+   croak "Error in module!";
+}
+1;
+</pre>
+<p>When called from a script like below &minus;</p>
+<pre class="prettyprint notranslate">
+use T;
+function();
+</pre>
+<p>It will produce the following result &minus;</p>
+<pre class="result notranslate">
+Error in module! at test.pl line 4
+</pre>
+<p>As with carp, the same basic rules apply regarding the including of line and file information according to the warn and die functions.</p>
+<h2>The confess Function</h2>
+<p>The <b>confess</b> function is like <b>cluck</b>; it calls die and then prints a stack trace all the way up to the origination script.</p>
+<pre class="prettyprint notranslate">
+package T;
+
+require Exporter;
+@ISA = qw/Exporter/;
+@EXPORT = qw/function/;
+use Carp;
+
+sub function {
+   confess "Error in module!";
+}
+1;
+</pre>
+    </div>
+    <div class="oops">
+        <p>We have already studied references in Perl and Perl anonymous arrays and hashes. Object Oriented concept in Perl is very much based on references and anonymous array and hashes. Let's start learning basic concepts of Object Oriented Perl.</p>
+<h2>Object Basics</h2>
+<p>There are three main terms, explained from the point of view of how Perl handles objects. The terms are object, class, and method.</p>
+<ul class="list">
+<li><p>An <b>object</b> within Perl is merely a reference to a data type that knows what class it belongs to. The object is stored as a reference in a scalar variable. Because a scalar only contains a reference to the object, the same scalar can hold different objects in different classes.</p></li>
+<li><p>A <b>class</b> within Perl is a package that contains the corresponding methods required to create and manipulate objects.</p></li>
+<li><p>A <b>method</b> within Perl is a subroutine, defined with the package. The first argument to the method is an object reference or a package name, depending on whether the method affects the current object or the class.</p></li>
+</ul>
+<p>Perl provides a <b>bless()</b> function, which is used to return a reference which ultimately becomes an object.</p>
+<h2>Defining a Class</h2>
+<p>It is very simple to define a class in Perl. A class is corresponding to a Perl Package in its simplest form. To create a class in Perl, we first build a package.</p>
+<p>A package is a self-contained unit of user-defined variables and subroutines, which can be re-used over and over again.</p>
+<p>Perl Packages provide a separate namespace within a Perl program which keeps subroutines and variables independent from conflicting with those in other packages.</p>
+<p>To declare a class named Person in Perl we do &minus;</p>
+<pre class="prettyprint notranslate">
+package Person;
+</pre>
+<p>The scope of the package definition extends to the end of the file, or until another package keyword is encountered.</p>
+<h2>Creating and Using Objects</h2>
+<p>To create an instance of a class (an object) we need an object constructor. This constructor is a method defined within the package. Most programmers choose to name this object constructor method new, but in Perl you can use any name.</p>
+<p>You can use any kind of Perl variable as an object in Perl. Most Perl programmers choose either references to arrays or hashes.</p>
+<p>Let's create our constructor for our Person class using a Perl hash reference. When creating an object, you need to supply a constructor, which is a subroutine within a package that returns an object reference. The object reference is created by blessing a reference to the package's class. For example &minus;</p>
+<pre class="prettyprint notranslate">
+package Person;
+sub new {
+   my $class = shift;
+   my $self = {
+      _firstName =&gt; shift,
+      _lastName  =&gt; shift,
+      _ssn       =&gt; shift,
+   };
+   # Print all the values just for clarification.
+   print "First Name is $self-&gt;{_firstName}\n";
+   print "Last Name is $self-&gt;{_lastName}\n";
+   print "SSN is $self-&gt;{_ssn}\n";
+   bless $self, $class;
+   return $self;
+}
+</pre>
+<p>Now Let us see how to create an Object.</p>
+<pre class="prettyprint notranslate">
+$object = new Person( "Mohammad", "Saleem", 23234345);
+</pre>
+<p>You can use simple hash in your consturctor if you don't want to assign any value to any class variable. For example &minus;</P>
+<pre class="prettyprint notranslate">
+package Person;
+sub new {
+   my $class = shift;
+   my $self = {};
+   bless $self, $class;
+   return $self;
+}
+</pre>
+<h2>Defining Methods</h2>
+<p>Other object-oriented languages have the concept of security of data to prevent a programmer from changing an object data directly and they provide accessor methods to modify object data. Perl does not have private variables but we can still use the concept of helper methods to manipulate object data.</p>
+<p>Lets define a helper method to get persons first name &minus;</p>
+<pre class="prettyprint notranslate">
+sub getFirstName {
+   return $self-&gt;{_firstName};
+}
+</pre>
+<p>Another helper function to set persons first name &minus;</p>
+<pre class="prettyprint notranslate">
+sub setFirstName {
+   my ( $self, $firstName ) = @_;
+   $self-&gt;{_firstName} = $firstName if defined($firstName);
+   return $self-&gt;{_firstName};
+}
+</pre>
+<p>Now lets have a look into complete example: Keep Person package and helper functions into Person.pm file.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl 
+
+package Person;
+
+sub new {
+   my $class = shift;
+   my $self = {
+      _firstName =&gt; shift,
+      _lastName  =&gt; shift,
+      _ssn       =&gt; shift,
+   };
+   # Print all the values just for clarification.
+   print "First Name is $self-&gt;{_firstName}\n";
+   print "Last Name is $self-&gt;{_lastName}\n";
+   print "SSN is $self-&gt;{_ssn}\n";
+   bless $self, $class;
+   return $self;
+}
+sub setFirstName {
+   my ( $self, $firstName ) = @_;
+   $self-&gt;{_firstName} = $firstName if defined($firstName);
+   return $self-&gt;{_firstName};
+}
+
+sub getFirstName {
+   my( $self ) = @_;
+   return $self-&gt;{_firstName};
+}
+1;
+</pre>
+<p>Now let's make use of Person object in employee.pl file as follows &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+use Person;
+
+$object = new Person( "Mohammad", "Saleem", 23234345);
+# Get first name which is set using constructor.
+$firstName = $object-&gt;getFirstName();
+
+print "Before Setting First Name is : $firstName\n";
+
+# Now Set first name using helper function.
+$object-&gt;setFirstName( "Mohd." );
+
+# Now get first name set by helper function.
+$firstName = $object-&gt;getFirstName();
+print "Before Setting First Name is : $firstName\n";
+</pre>
+<p>When we execute above program, it produces the following result &minus;</p>
+<pre class="result notranslate">
+First Name is Mohammad
+Last Name is Saleem
+SSN is 23234345
+Before Setting First Name is : Mohammad
+Before Setting First Name is : Mohd.
+</pre>
+<h2>Inheritance</h2>
+<p>Object-oriented programming has very good and useful concept called inheritance. Inheritance simply means that properties and methods of a parent class will be available to the child classes. So you don't have to write the same code again and again, you can just inherit a parent class.</p>
+<p>For example, we can have a class Employee, which inherits from Person. This is referred to as an "isa" relationship because an employee is a person. Perl has a special variable, @ISA, to help with this. @ISA governs (method) inheritance.</p>
+<p>Following are the important points to be considered while using inheritance &minus;</P>
+<ul class="list">
+<li><p>Perl searches the class of the specified object for the given method or attribute, i.e., variable.</p></li>
+<li><p>Perl searches the classes defined in the object class's @ISA array.</p></li>
+<li><p>If no method is found in steps 1 or 2, then Perl uses an AUTOLOAD subroutine, if one is found in the @ISA tree.</p></li>
+<li><p>If a matching method still cannot be found, then Perl searches for the method within the UNIVERSAL class (package) that comes as part of the standard Perl library.</p></li>
+<li><p>If the method still has not found, then Perl gives up and raises a runtime exception.</p></li>
+</ul>
+<p>So to create a new Employee class that will inherit methods and attributes from our Person class, we simply code as follows: Keep this code into Employee.pm.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+package Employee;
+use Person;
+use strict;
+our @ISA = qw(Person);    # inherits from Person
+</pre>
+<p>Now Employee Class has all the methods and attributes inherited from Person class and you can use them as follows: Use main.pl file to test it &minus;</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+use Employee;
+
+$object = new Employee( "Mohammad", "Saleem", 23234345);
+# Get first name which is set using constructor.
+$firstName = $object-&gt;getFirstName();
+
+print "Before Setting First Name is : $firstName\n";
+
+# Now Set first name using helper function.
+$object-&gt;setFirstName( "Mohd." );
+
+# Now get first name set by helper function.
+$firstName = $object-&gt;getFirstName();
+print "After Setting First Name is : $firstName\n";
+</pre>
+<p>When we execute above program, it produces the following result &minus;</p>
+<pre class="result notranslate">
+First Name is Mohammad
+Last Name is Saleem
+SSN is 23234345
+Before Setting First Name is : Mohammad
+Before Setting First Name is : Mohd.
+</pre>
+<h2>Method Overriding</h2>
+<p>The child class Employee inherits all the methods from the parent class Person. But if you would like to override those methods in your child class then you can do it by giving your own implementation. You can add your additional functions in child class or you can add or modify the functionality of an existing methods in its parent class. It can be done as follows: modify Employee.pm file.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+package Employee;
+use Person;
+use strict;
+our @ISA = qw(Person);    # inherits from Person
+
+# Override constructor
+sub new {
+   my ($class) = @_;
+
+   # Call the constructor of the parent class, Person.
+   my $self = $class-&gt;SUPER::new( $_[1], $_[2], $_[3] );
+   # Add few more attributes
+   $self-&gt;{_id}   = undef;
+   $self-&gt;{_title} = undef;
+   bless $self, $class;
+   return $self;
+}
+
+# Override helper function
+sub getFirstName {
+   my( $self ) = @_;
+   # This is child class function.
+   print "This is child class helper function\n";
+   return $self-&gt;{_firstName};
+}
+
+# Add more methods
+sub setLastName{
+   my ( $self, $lastName ) = @_;
+   $self-&gt;{_lastName} = $lastName if defined($lastName);
+   return $self-&gt;{_lastName};
+}
+
+sub getLastName {
+   my( $self ) = @_;
+   return $self-&gt;{_lastName};
+}
+
+1;
+</pre>
+<p>Now let's again try to use Employee object in our main.pl file and execute it.</p>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+use Employee;
+
+$object = new Employee( "Mohammad", "Saleem", 23234345);
+# Get first name which is set using constructor.
+$firstName = $object-&gt;getFirstName();
+
+print "Before Setting First Name is : $firstName\n";
+
+# Now Set first name using helper function.
+$object-&gt;setFirstName( "Mohd." );
+
+# Now get first name set by helper function.
+$firstName = $object-&gt;getFirstName();
+print "After Setting First Name is : $firstName\n";
+</pre>
+<p>When we execute above program, it produces the following result &minus;</p>
+<pre class="result notranslate">
+First Name is Mohammad
+Last Name is Saleem
+SSN is 23234345
+This is child class helper function
+Before Setting First Name is : Mohammad
+This is child class helper function
+After Setting First Name is : Mohd.
+</pre>
+<h2>Default Autoloading</h2>
+<p>Perl offers a feature which you would not find in any other programming languages: a default subroutine. Which means, if you define a function called <b>AUTOLOAD(),</b> then any calls to undefined subroutines will call AUTOLOAD() function automatically. The name of the missing subroutine is accessible within this subroutine as $AUTOLOAD.</p>
+<p>Default autoloading functionality is very useful for error handling. Here is an example to implement AUTOLOAD, you can implement this function in your own way.</p>
+<pre class="prettyprint notranslate">
+sub AUTOLOAD {
+   my $self = shift;
+   my $type = ref ($self) || croak "$self is not an object";
+   my $field = $AUTOLOAD;
+   $field =~ s/.*://;
+   unless (exists $self->{$field}) {
+      croak "$field does not exist in object/class $type";
+   }
+   if (@_) {
+      return $self-&gt;($name) = shift;
+   } else {
+      return $self-&gt;($name);
+   }
+}
+</pre>
+<h2>Destructors and Garbage Collection</h2>
+<p>If you have programmed using object oriented programming before, then you will be aware of the need to create a <b>destructor</b> to free the memory allocated to the object when you have finished using it. Perl does this automatically for you as soon as the object goes out of scope.</p> 
+<p>In case you want to implement your destructor, which should take care of closing files or doing some extra processing then you need to define a special method called <b>DESTROY</b>. This method will be called on the object just before Perl frees the memory allocated to it. In all other respects, the DESTROY method is just like any other method, and you can implement whatever logic you want inside this method.</p>
+<p>A destructor method is simply a member function (subroutine) named DESTROY, which will be called automatically in following cases &minus;</p>
+<ul class="list">
+<li>When the object reference's variable goes out of scope.</li>
+<li>When the object reference's variable is undef-ed.</li>
+<li>When the script terminates</li>
+<li>When the perl interpreter terminates</li>
+</ul>
+<p>For Example, you can simply put the following method DESTROY in your class &minus;</p>
+<pre class="prettyprint notranslate">
+package MyClass;
+...
+sub DESTROY {
+   print "MyClass::DESTROY called\n";
+}
+</pre>
+<h2>Object Oriented Perl Example</h2>
+<p>Here is another nice example, which will help you to understand Object Oriented Concepts of Perl. Put this source code into any perl file and execute it.</p>
+<div class="demo-view">
+<a href="http://tpcg.io/RtjFC1" target="_blank" rel="nofollow" class="demo"><i class="fa-external-link"></i> Live Demo</a>
+</div>
+<pre class="prettyprint notranslate">
+#!/usr/bin/perl
+
+# Following is the implementation of simple Class.
+package MyClass;
+
+sub new {
+   print "MyClass::new called\n";
+   my $type = shift;            # The package/type name
+   my $self = {};               # Reference to empty hash
+   return bless $self, $type;   
+}
+
+sub DESTROY {
+   print "MyClass::DESTROY called\n";
+}
+
+sub MyMethod {
+   print "MyClass::MyMethod called!\n";
+}
+
+
+# Following is the implemnetation of Inheritance.
+package MySubClass;
+
+@ISA = qw( MyClass );
+
+sub new {
+   print "MySubClass::new called\n";
+   my $type = shift;            # The package/type name
+   my $self = MyClass-&gt;new;     # Reference to empty hash
+   return bless $self, $type;  
+}
+
+sub DESTROY {
+   print "MySubClass::DESTROY called\n";
+}
+
+sub MyMethod {
+   my $self = shift;
+   $self-&gt;SUPER::MyMethod();
+   print "   MySubClass::MyMethod called!\n";
+}
+
+# Here is the main program using above classes.
+package main;
+
+print "Invoke MyClass method\n";
+
+$myObject = MyClass-&gt;new();
+$myObject-&gt;MyMethod();
+
+print "Invoke MySubClass method\n";
+
+$myObject2 = MySubClass-&gt;new();
+$myObject2-&gt;MyMethod();
+
+print "Create a scoped object\n";
+{
+   my $myObject2 = MyClass-&gt;new();
+}
+# Destructor is called automatically here
+
+print "Create and undef an object\n";
+$myObject3 = MyClass-&gt;new();
+undef $myObject3;
+
+print "Fall off the end of the script...\n";
+# Remaining destructors are called automatically here
+</pre>
+<p>When we execute above program, it produces the following result &minus;</p>
+<pre class="result notranslate">
+Invoke MyClass method
+MyClass::new called
+MyClass::MyMethod called!
+Invoke MySubClass method
+MySubClass::new called
+MyClass::new called
+MyClass::MyMethod called!
+MySubClass::MyMethod called!
+Create a scoped object
+MyClass::new called
+MyClass::DESTROY called
+Create and undef an object
+MyClass::new called
+MyClass::DESTROY called
+Fall off the end of the script...
+MyClass::DESTROY called
+MySubClass::DESTROY called
+</pre>
+    </div>
+    <hr>
+    <hr>
+    <!-- <div class="commentbox">
+      <h2>Add your comments</h2>
+      <form>
+        <input class="cmtinput" type="text" placeholder="please add your name and then comment" id="name">
+        <input type="button" value="Submit" onclick='manageData()'>
+      </form>
+      <div id="msg"></div>
+      
+      <h2>List</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>S.No</td>
+            <td>comment</td>
+            <td>Action</td>
+          </tr>
+        <thead>
+        <tbody id="root">
+        
+        <tbody>
+      </table>
+    </div> -->
+    <div class="feedb">
+      <button class="buttonf button2f"><a href="../feedback/index.php">FeedBack</a></button>
+    <button class="buttonf button2f"><a href="about.html">About Us</a></button>
+    <button class="buttonf button2f"><a href="../contactus/index.html">Contact us</a></button>
+    </div>
+</body>
+<script src="../js/index.js"></script>
+
+</html>

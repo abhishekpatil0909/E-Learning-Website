@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/publicclass.css">
+    <title>C# Tutorial</title>
+</head>
+<body>
+    <div class="intro">
+        <h2>What is C#?</h2>
+<p>C# is pronounced &quot;C-Sharp&quot;. </p>
+<p>It is an object-oriented programming language created by Microsoft that runs 
+on the .NET Framework.</p>
+<p>C# has roots from the C family, and the language is close to other popular languages like <a href="/cpp/default.asp">C++</a> and <a href="/java/default.asp">Java</a>.</p>
+<p>The first version was released in year 2002. The latest version, <strong>C# 8</strong>, was released in September 2019.</p>
+<p>C# is used for:</p>
+
+<ul>
+<li>Mobile applications</li>
+<li>Desktop applications</li>
+<li>Web applications</li>
+<li>Web services</li>
+<li>Web sites</li>
+<li>Games</li>
+<li>VR</li>
+<li>Database applications</li>
+<li>And much, much more!</li>
+</ul>
+<hr>
+
+<h2>Why Use C#?</h2>
+<ul>
+<li>It is one of the most popular programming language in the world</li>
+<li>It is easy to learn and simple to use</li>
+<li>It has a huge community support</li>
+<li>C# is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs.</li>
+<li>As C# is close to C, <a href="/cpp/default.asp">C++</a> and <a href="/java/default.asp">Java</a>, it makes it easy for programmers to switch to C# or vice versa</li>
+</ul>
+<hr>
+
+<h2>Get Started</h2>
+<p>This tutorial will teach you the basics of C#.</p>
+<p>It is not necessary to have any prior programming experience.</p>
+    </div>
+    <div class="variables">
+        <h2>C# Variables</h2>
+<p>Variables are containers for storing data values. </p>
+<p>In C#, there are different <strong>types</strong> of variables (defined with different keywords), for example:</p>
+
+<ul>
+ <li><code class="w3-codespan">int</code> - stores integers (whole numbers), without decimals, such as 123 or -123</li>
+ <li><code class="w3-codespan">double</code> - stores floating point numbers, with decimals, such as 19.99 or -19.99</li>
+ <li><code class="w3-codespan">char</code> - stores single characters, such as 'a' or 'B'. 
+ Char values are surrounded by single quotes</li>
+ <li><code class="w3-codespan">string</code> - stores text, such as "Hello World". 
+ String values are surrounded by double quotes</li>
+ <li><code class="w3-codespan">bool</code> - stores values with two states: 
+ true or false</li>
+</ul>
+<hr>
+<h2>Declaring (Creating) Variables</h2>
+<p>To create a variable, you must specify the type and assign it a value:</p>
+<div class="w3-example">
+<h3>Syntax</h3>
+<pre class="language-java w3-white" style="font-style: italic"><code>type variableName = value;
+</code></pre>
+</div>
+<p>Where <em>type</em> is a C# type (such as <code class="w3-codespan">int</code> or <code class="w3-codespan">string</code>), and 
+<em>variableName</em> is the name of the variable (such as <strong>x</strong> or
+<strong>name</strong>). The <b>equal sign</b> is used to assign values to the variable.</p>
+<p>To create a variable that should store text, look at the following example:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create a variable called <strong>name</strong> of type <code class="w3-codespan">string</code> and assign it the value "<strong>John</strong>":</p>
+<pre class="language-csharp w3-white"><code>string name = "John";
+Console.WriteLine(name);
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<p>To create a variable that should store a number, look at the following example:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create a variable called <strong>myNum</strong> of type <code class="w3-codespan">int</code> and assign it the value <strong>15</strong>:</p>
+<pre class="language-csharp w3-white"><code>int myNum = 15;
+Console.WriteLine(myNum);
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<p>You can also declare a variable without assigning the value, and assign the value later:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>int myNum;
+myNum = 15;
+Console.WriteLine(myNum);
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<p>Note that if you assign a new value to an existing variable, it will overwrite the previous value:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Change the value of <code class="w3-codespan">myNum</code> to 20:</p>
+<pre class="language-csharp w3-white"><code>int myNum = 15;
+myNum = 20; // myNum is now 20
+Console.WriteLine(myNum);</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+<hr>
+
+<h2>Constants</h2>
+<p>However, you can add the <code class="w3-codespan">const</code> keyword if you don't want others (or yourself) to overwrite existing values (this will declare the variable as "constant", which means unchangeable and read-only):</p>
+<div class="w3-example w3-pale-red">
+<h3>Example</h3>
+<pre class="language-csharp w3-white w3-border-red"><code><strong>const</strong> int myNum = 15;
+myNum = 20; // error
+</code></pre>
+</div>
+<div class="w3-note w3-panel">
+<p>The <code class="w3-codespan">const</code> keyword is useful when you want a variable to always store the same value, so that others (or yourself) won't mess up your code. An example that is often referred to as a constant, is PI (3.14159...).</p>
+<p><strong>Note:</strong> You cannot declare a constant variable without assigning the value. If you do, an error will occur: <span class="w3-pale-red">A const field requires a value to be provided</span>.</p>
+</div>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+  <div id="adngin-mid_content-0"></div>
+</div><hr>
+
+<h2>Other Types</h2>
+<p>A demonstration of how to declare variables of other types:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>int myNum = 5;
+double myDoubleNum = 5.99D;
+char myLetter = 'D';
+bool myBool = true;
+string myText = &quot;Hello&quot;;
+</code></pre>
+</div>
+<div class="w3-note w3-panel">
+<p>You will learn more about data types in the next chapter.</p>
+</div>
+<hr>
+
+<h2>Display Variables</h2>
+<p>The <code class="w3-codespan">WriteLine()</code> method is often used to 
+display variable values to the console window.</p>
+<p>To combine both text and a variable, use the <code class="w3-codespan">+</code> character:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>string name = &quot;John&quot;;
+Console.WriteLine("Hello " + name);
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<p>You can also use the <code class="w3-codespan">+</code> character to add a variable to another variable:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>string firstName = &quot;John &quot;;
+string lastName = &quot;Doe&quot;;
+string fullName = firstName + lastName;
+Console.WriteLine(fullName);
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<p>For numeric values, the <code class="w3-codespan">+</code> character works as a mathematical operator (notice that we use <code class="w3-codespan">int</code> (integer) variables here):</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>int x = 5;
+int y = 6;
+Console.WriteLine(x + y); // Print the value of x + y
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+<p>From the example above, you can expect:</p>
+
+<ul>
+ <li>x stores the value 5</li>
+ <li>y stores the value 6</li>
+ <li>Then we use the <code class="w3-codespan">WriteLine()</code> method to display the value of x + y, 
+ which is <strong>11</strong></li>
+</ul>
+<hr>
+
+<h2>Declare Many Variables</h2>
+<p>To declare more than one variable of the <strong>same type</strong>, use a comma-separated list:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-java w3-white"><code>int x = 5, y = 6, z = 50;
+Console.WriteLine(x + y + z);
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<hr>
+<h2>C# Identifiers</h2>
+<p>All C# <strong>variables</strong> must be
+<strong>identified</strong> with <strong>unique names</strong>.</p>
+<p>These unique names are called <strong>identifiers</strong>.</p>
+<p>Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).</p>
+<p><strong>Note:</strong> It is recommended to use descriptive names in order to 
+create understandable and maintainable code:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>// Good
+int minutesPerHour = 60;
+
+// OK, but not so easy to understand what <strong>m</strong> actually is
+int m = 60;
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<p>The general rules for naming variables are:</p>
+<ul>
+  <li>Names can contain letters, digits and the underscore character (_)</li>
+  <li>Names must begin with a letter</li>
+  <li>Names should start with a lowercase letter and it cannot contain whitespace</li>
+  <li>Names are case sensitive (&quot;myVar&quot; and &quot;myvar&quot; are different variables)</li>
+  <li>Reserved words (like C# keywords, such as <code class="w3-codespan">int</code> or 
+  <code class="w3-codespan">double</code>) cannot be used as names</li>
+</ul>
+<hr>
+    </div>
+    <div class="ifelse">
+        <h2>C# Conditions and If Statements</h2>
+
+<p>C# supports the usual logical conditions from mathematics:</p>
+<ul>
+<li>Less than: <span class="w3-codespan">a &lt; b</span></li>
+<li>Less than or equal to: <span class="w3-codespan">a &lt;= b</span></li>
+<li>Greater than: <span class="w3-codespan">a &gt; b</span></li>
+<li>Greater than or equal to: <span class="w3-codespan">a &gt;= b</span></li>
+<li>Equal to <span class="w3-codespan">a == b</span></li>
+<li>Not Equal to: <span class="w3-codespan">a != b</span></li>
+</ul>
+<p>You can use these conditions to perform different actions for different decisions.</p>
+<p>C# has the following conditional statements:</p>
+<ul>
+  <li>Use <code class="w3-codespan">if</code> to specify a block of code to be executed, if a specified condition is true</li>
+  <li>Use <code class="w3-codespan">else</code> to specify a block of code to be executed, if the same condition is false</li>
+  <li>Use <code class="w3-codespan">else if</code> to specify a new condition to test, if the first condition is false</li>
+  <li>Use <code class="w3-codespan">switch</code> to specify many alternative blocks of code to be executed</li>
+</ul>
+
+<hr>
+
+<h2>The if Statement</h2>
+
+<p>Use the <code class="w3-codespan">if</code> statement to specify a block of C# code to be executed if a condition is 
+<code class="w3-codespan">True</code>.</p>
+
+<div class="w3-example">
+<h3>Syntax</h3>
+<pre class="language-csharp w3-white"><code>if (<em>condition</em>) 
+{
+&nbsp; <em>// block of code to be executed if the condition is True</em>
+}
+</code></pre>
+</div>
+
+<div class="w3-panel w3-note">
+<p>Note that <code class="w3-codespan">if</code> is in lowercase letters. Uppercase letters (If or IF) will generate an error.</p>
+</div>
+<p>In the example below, we test two values to find out if 20 is greater than 
+18. If the condition is <code class="w3-codespan">True</code>, print some text:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>if (20 &gt; 18) 
+{
+&nbsp; Console.WriteLine(&quot;20 is greater than 18&quot;);
+}
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+
+<p>We can also test variables:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>int x = 20;
+int y = 18;
+if (x &gt; y) 
+{
+&nbsp; Console.WriteLine(&quot;x is greater than y&quot;);
+}
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+<h4>Example explained</h4>
+<p>In the example above we use two variables, <strong>x</strong> and <strong>y</strong>, 
+to test whether x is greater than y 
+(using the <code class="w3-codespan">&gt;</code> operator). As x is 20, and y is 18, and we know that 20 is greater than 18, we print to the screen that "x is greater than y".</p>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+  <div id="adngin-mid_content-0"></div>
+</div><hr>
+
+<h2>The else Statement</h2>
+<p>Use the <code class="w3-codespan">else</code> statement to specify a block of code to be executed if the condition is 
+<code class="w3-codespan">False</code>.</p>
+
+<div class="w3-example">
+<h3>Syntax</h3>
+<pre class="language-csharp w3-white"><code>if (<em>condition</em>)
+{
+&nbsp; <em>// block of code to be executed if the condition is True</em>
+} 
+else 
+{
+&nbsp; <em>// block of code to be executed if the condition is False</em>
+}
+</code></pre>
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white" data-line="6"><code>int time = 20;
+if (time &lt; 18) 
+{
+&nbsp; Console.WriteLine(&quot;Good day.&quot;);
+} 
+else 
+{
+&nbsp; Console.WriteLine(&quot;Good evening.&quot;);
+}
+// Outputs &quot;Good evening.&quot;
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+<h4>Example explained</h4>
+<p>In the example above, time (20) is greater than 18, so the condition is 
+<code class="w3-codespan">False</code>. 
+Because of this, we move on to the <code class="w3-codespan">else</code> condition and print to the screen "Good 
+evening". If the time was less than 18, the program would print &quot;Good day&quot;.</p>
+<hr>
+
+<h2>The else if Statement</h2>
+
+<p>Use the <code class="w3-codespan">else if</code> statement to specify a new condition if the first condition is 
+<code class="w3-codespan">False</code>.</p>
+
+<div class="w3-example">
+<h3>Syntax</h3>
+<pre class="language-csharp w3-white" data-keep-tags="em"><code>if (<em>condition1</em>)
+{
+&nbsp; <em>// block of code to be executed if condition1 is True</em>
+} 
+else if (<em>condition2</em>) 
+{
+&nbsp; <em>// block of code to be executed if the condition1 is false and condition2 is True</em>
+} 
+else
+{
+&nbsp; <em>// block of code to be executed if the condition1 is false and condition2 is False</em>
+}
+</code></pre>
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white" data-line="6"><code>int time = 22;
+if (time &lt; 10) 
+{
+&nbsp; Console.WriteLine(&quot;Good morning.&quot;);
+} 
+else if (time &lt; 20) 
+{
+&nbsp; Console.WriteLine(&quot;Good day.&quot;);
+} 
+else 
+{
+&nbsp; Console.WriteLine(&quot;Good evening.&quot;);
+}
+// Outputs &quot;Good evening.&quot;
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+<h4>Example explained</h4>
+<p>In the example above, time (22) is greater than 10, so the <strong>first condition</strong> is 
+<code class="w3-codespan">False</code>. The next condition, in the  
+<code class="w3-codespan">else if</code> statement, is also 
+<code class="w3-codespan">False</code>, so we move on to the <code class="w3-codespan">else</code>
+condition since <strong>condition1</strong> and <strong>condition2</strong> is both 
+<code class="w3-codespan">False</code> - and print to the screen "Good 
+evening".</p>
+<p>However, if the time was 14, our program would print "Good day."</p>
+<hr>
+
+<h2>Short Hand If...Else (Ternary Operator)</h2>
+<p>There is also a short-hand if else, which is known as the <strong>ternary 
+operator</strong> because it consists of three operands. It can be used to 
+replace multiple lines of code with a single line. It is often used to replace 
+simple if else statements:</p>
+
+<div class="w3-example">
+<h3>Syntax</h3>
+<em><pre class="language-csharp w3-white"><code><em>variable</em> = (<em>condition</em>) ? <em>expressionTrue</em> : <em> expressionFalse</em>;
+</code></pre></em>
+</div>
+
+<p>Instead of writing:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>int time = 20;
+if (time &lt; 18) 
+{
+&nbsp; Console.WriteLine(&quot;Good day.&quot;);
+} 
+else 
+{
+&nbsp; Console.WriteLine(&quot;Good evening.&quot;);
+}
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+<p>You can simply write:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<pre class="language-csharp w3-white"><code>int time = 20;
+string result = (time &lt; 18) ? &quot;Good day.&quot; : &quot;Good evening.&quot;;
+Console.WriteLine(result);
+</code></pre>
+<p>
+<a target="_blank" class="w3-btn" href="https://www.jdoodle.com/compile-c-sharp-online/">Try it Yourself &raquo;</a>
+</p>
+</div>
+<hr>
+
+<div>
+<h2>C# Exercises</h2>
+<form autocomplete="off" spellcheck="false" id="w3-exerciseform" action="exercise.php?filename=exercise_conditions1" method="post" target="_blank">
+<h2>Test Yourself With Exercises</h2>
+<div class="exercisewindow">
+<h2>Exercise:</h2>
+<p>Print "Hello World" if <code class="w3-codespan">x</code> is <strong>greater than</strong> <code class="w3-codespan">y</code>.</p>
+<div class="exerciseprecontainer">
+<pre style="overflow: auto;">
+int x = 50;
+int y = 10;
+<input name="ex1" maxlength="2" style="width: 25px;"> (x <input name="ex2" maxlength="1" style="width: 15px;"> y) 
+{
+  Console.WriteLine("Hello World");
+}
+</pre>
+</div>
+<br>
+<hr>
+<hr>
+<!-- <div class="commentbox">
+  <h2>Add your comments</h2>
+  <form>
+    <input class="cmtinput" type="text" placeholder="please add your name and then comment" id="name">
+    <input type="button" value="Submit" onclick='manageData()'>
+  </form>
+  <div id="msg"></div>
+  
+  <h2>List</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <td>S.No</td>
+        <td>comment</td>
+        <td>Action</td>
+      </tr>
+    <thead>
+    <tbody id="root">
+    
+    <tbody>
+  </table>
+</div> -->
+<div class="feedb">
+  <button class="buttonf button2f"><a href="../feedback/index.php">FeedBack</a></button>
+<button class="buttonf button2f"><a href="about.html">About Us</a></button>
+<button class="buttonf button2f"><a href="../contactus/index.html">Contact us</a></button>
+</div>
+</body>
+<script src="../js/index.js"></script>
+   
+
+</html>

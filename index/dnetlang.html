@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asp.net Tutorial</title>
+    <link rel="stylesheet" href="../style/publicclass.css">
+</head>
+<body>
+    <div class="intro">
+        <h2>ASP.NET Web Pages</h2>
+<p>Web Pages is one of many programming models for creating ASP.NET web sites and 
+web applications.</p>
+<p>Web Pages provides an easy way to combine HTML, 
+CSS, and server code: </p>
+<ul>
+  <li>Easy to learn, understand, and use</li>
+  <li>Uses an SPA application model (Single Page Application)</li>
+  <li>Similar to PHP and Classic ASP</li>
+  <li>VB (Visual Basic) or C# (C sharp) scripting languages </li>
+</ul>
+<p>In addition, Web Pages applications are easily extendable with programmable helpers 
+for 
+databases, videos, graphics, social 
+networking and more.
+</p>
+
+<hr>
+
+<h2>Web Pages Tutorial</h2>
+<p>If you are new to ASP.NET, Web Pages is a perfect place to start. </p>
+<p>In this Web Pages tutorial you will learn how to combine HTML, CSS, JavaScript 
+and server code, using server code written in VB 
+or C# .</p>
+<p>You will also learn how to extend your web pages with programmable Web 
+Helpers. </p>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+
+  <div id="adngin-mid_content-0"></div>
+  
+</div>
+<hr>
+<h2>Web Pages Examples</h2>
+<p>Learn by examples!</p>
+<p>Because ASP.NET code is executed on the server, you
+cannot view the code in your browser. You will only see the output as plain HTML. </p>
+<p>At W3Schools every example displays the hidden 
+ASP.NET code. This
+makes it easier for you to understand how it works.</p>
+
+
+
+<hr>
+
+<h2>Web Pages References</h2>
+<p>At the end of this tutorial you wsill find a complete set of ASP.NET references with objects, 
+components, properties and methods.</p>
+    </div>
+    <div class="objects">
+        <h1>ASP.NET Web Pages <span class="color_h1">- Objects</span></h1>
+
+<hr>
+<p class="intro">&nbsp;Web Pages is much often about Objects.</p>
+<hr>
+<h2>The Page Object</h2>
+<p>You have already seen some Page Object methods in use:</p>
+<div class="w3-code w3-border notranslate"><div>
+    @RenderPage(&quot;header.cshtml&quot;)<br><br>@RenderBody()<br>
+</div></div>
+<p>In the previous chapter you saw two Page Object properties being used (IsPost, and 
+Request):</p>
+<div class="w3-code w3-border notranslate"><div>
+    If (IsPost) {<br><br>if (Request[&quot;Choice&quot;] != null) {<br>
+</div></div>
+<hr>
+<h2>Some Page Object Methods<br>
+</h2>
+<table class="ws-table-all notranslate" style="width: 100%">
+<tr>
+    <th style="width:20%">Method</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td>href</td>
+    <td>Builds a URL using the specified parameters</td>
+</tr>
+<tr>
+    <td>RenderBody()</td>
+    <td>Renders the portion of a content page that is not within a named 
+    section (In layout pages)</td>
+</tr>
+<tr>
+    <td>RenderPage(<em>page</em>)</td>
+    <td>Renders the content of one page within another page</td>
+</tr>
+<tr>
+    <td>RenderSection(<em>section</em>)</td>
+    <td>Renders the content of a named section (In layout pages)</td>
+</tr>
+<tr>
+    <td>Write(<em>object</em>)</td>
+    <td>Writes the object as an HTML-encoded string</td>
+</tr>
+<tr>
+    <td>WriteLiteral</td>
+    <td>Writes an object without HTML-encoding it first.</td>
+</tr>
+</table>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+
+  <div id="adngin-mid_content-0"></div>
+  
+</div>
+<hr>
+<h2>Some Page Object Properties<br>
+</h2>
+<table class="ws-table-all notranslate" style="width: 100%">
+<tr>
+    <th style="width:20%">Property</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td>IsPost</td>
+    <td>Returns true if the HTTP data transfer method used by the client is a 
+    POST request</td>
+</tr>
+<tr>
+    <td>Layout</td>
+    <td>Gets or sets the path of a layout page</td>
+</tr>
+<tr>
+    <td>Page</td>
+    <td>Provides property-like access to data shared between pages and layout 
+    pages </td>
+</tr>
+<tr>
+    <td>Request</td>
+    <td>Gets the HttpRequest object for the current HTTP request</td>
+</tr>
+<tr>
+    <td>Server</td>
+    <td>Gets the HttpServerUtility object that provides web-page processing 
+    methods</td>
+</tr>
+</table>
+<hr>
+<h2>The Page Property (of the Page Object)</h2>
+<p>The Page property of the Page Object, provides property-like access to data shared between pages and layout 
+    pages.</p>
+<p>You can use (add) your own properties to the Page property:</p>
+<ul>
+  <li>Page.Title</li>
+  <li>Page.Version</li>
+  <li>Page.anythingyoulike<br></li>
+</ul>
+<p>The pages property is very helpful. For instance, it makes it possible to set 
+the page title in content files, and use it in the layout file:</p>
+    </div>
+    <div class="database">
+        <p class="intro">This chapter is about working with databases.</p>
+
+<hr>
+<h2>What We Will Do</h2>
+<p>In this chapter we will:</p>
+<ul>
+  <li>Create a web page to list data from a database</li>
+</ul>
+
+<hr>
+
+<h2>Displaying Data from Database</h2>
+
+<p>With Web Pages, you can easily display data from a database.</p>
+<p>You can connect to an existing database, or create a new database from scratch.</p>
+<p>In this example we will connect to an existing SQL Server Compact database.</p>
+<hr>
+
+<h2>Adding a Customers Page</h2>
+<p>In the &quot;DemoWebPages&quot; folder, create a new CSHTML file named &quot;Products.cshtml&quot;.</p>
+
+<p>Replace the code in the file with the code from the example below:</p>
+
+<div class="w3-example">
+<h3>Products.cshtml</h3>
+<div class="w3-code notranslate">
+<span class="marked">@{<br>
+var db = Database.Open(&quot;SmallBakery&quot;);&nbsp;<br>
+var selectQueryString = &quot;SELECT * FROM Product ORDER BY Name&quot;;&nbsp;<br>
+}</span><br>
+&lt;html&gt;&nbsp;<br>
+&lt;body&gt;&nbsp;<br>
+&lt;h1&gt;Small Bakery Products&lt;/h1&gt;&nbsp;<br>
+&lt;table&gt;&nbsp;<br>
+&lt;tr&gt;<br>
+&lt;th&gt;Id&lt;/th&gt;&nbsp;<br>
+&lt;th&gt;Product&lt;/th&gt;&nbsp;<br>
+&lt;th&gt;Description&lt;/th&gt;&nbsp;<br>
+&lt;th&gt;Price&lt;/th&gt;&nbsp;<br>
+&lt;/tr&gt;<br>
+<span class="marked">@foreach(var row in db.Query(selectQueryString))<br>
+{</span><br>
+&lt;tr&gt;&nbsp;<br>
+&lt;td&gt;<span class="marked">@row.Id</span>&lt;/td&gt;&nbsp;<br>
+&lt;td&gt;<span class="marked">@row.Name</span>&lt;/td&gt;&nbsp;<br>
+&lt;td&gt;<span class="marked">@row.Description</span>&lt;/td&gt;&nbsp;<br>
+&lt;td align=&quot;right&quot;&gt;<span class="marked">@row.Price</span>&lt;/td&gt;&nbsp;<br>
+&lt;/tr&gt;&nbsp;<br>
+<span class="marked">}</span><br>
+&lt;/table&gt;&nbsp;<br>
+&lt;/body&gt;&nbsp;<br>
+    &lt;/html&gt;</div>
+<a class="w3-btn w3-margin-bottom" href="showfile_c.asp?filename=try_webpages_cs_003" target="_blank">Run example &raquo;</a>
+</div>
+<hr>
+    
+<h2>Example Explained</h2>
+
+<p>The Database.Open(<em>name</em>) method will connect to a database in two 
+steps:</p>
+<p>First, it searches the application's App_Data folder for a database that 
+matches the <em>name</em> parameter without the file-name extension.</p>
+<p>If no file is found, it looks for a &quot;connection string&quot; in the 
+application's Web.config file.</p>
+<p>(A connection string contains information about how to connect to a database. It can include a file path, or the name of an SQL database, with full user name and password)</p>
+
+<p>This two-step search makes it possible to test the application with a local 
+database, and run the application on a web host using a connection string. </p>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+
+  <div id="adngin-mid_content-0"></div>
+  
+</div>
+<hr>
+<h2>ASP.NET Database Object Reference</h2>
+
+<div class="w3-responsive">
+<table class="ws-table-all notranslate">
+<tr>
+<th style="width:50%">Method</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Database.Execute(<em>SQLstatement [</em>,
+<em>parameters])</em></td><td>Executes <em>
+SQLstatement</em> (with optional parameters) such as 
+INSERT, DELETE, or UPDATE and returns a count of 
+affected records.</td></tr><tr>
+<td>Database.GetLastInsertId()</td>
+<td>
+Returns the identity column from the most recently 
+inserted row.</td></tr><tr>
+<td>Database.Open(<em>filename</em>) <br>
+Database.Open(<em>connectionStringName</em>)</td><td>
+Opens either the specified database file or the 
+database specified using a named connection string 
+from the <em>Web.config</em> file.</td></tr><tr>
+<td>Database.OpenConnectionString(<em>connectionString</em>)</td>
+<td>
+Opens a database using the connection string. (This 
+contrasts with Database.Open, which 
+uses a connection string name.)</td></tr><tr>
+<td>Database.Query(<em>SQLstatement[, 
+parameters]</em>)</td><td>Queries the database 
+using <em>SQLstatement</em> (optionally passing 
+parameters) and returns the results as a collection.
+</td></tr><tr>
+<td>Database.QuerySingle(<em>SQLstatement</em>
+<em>[, parameters]</em>)</td><td>Executes <em>
+SQLstatement</em> (with optional parameters) and 
+returns a single record.</td></tr><tr>
+<td>Database.QueryValue(<em>SQLstatement</em>
+<em>[, parameters]</em>)</td><td>Executes <em>
+SQLstatement</em> (with optional parameters) and 
+returns a single value.</td></tr></table>
+</div>
+    </div>
+    <div class="rozer">
+        p class="intro">Razor is not a programming language. It's a server side markup language. </p>
+<hr>
+<h2>What is Razor?</h2>
+<p>Razor is a markup syntax that 
+lets you embed server-based code (Visual Basic and C#) into web pages.</p>
+<p>Server-based code can create dynamic web content on the fly, while a web page 
+is written to the browser. When a web page is called, the server executes the 
+server-based code inside the page before it returns the page to the browser. By 
+running on the server, the code can perform complex tasks, like accessing 
+databases. </p>
+<p>Razor is based 
+on ASP.NET, and designed 
+for creating web applications. It has the power of traditional ASP.NET markup, 
+but it is easier to use, and easier to learn.<br></p>
+
+<hr>
+
+<h2>Razor Syntax</h2>
+<p>Razor uses a syntax very similar to PHP and Classic ASP.</p>
+
+<p>Razor:</p>
+
+<div class="w3-code w3-border notranslate"><div>
+    &lt;ul&gt;<br>@for (int i = 0; i &lt; 10; i++) {<br>&lt;li&gt;@i&lt;/li&gt;<br>}<br>&lt;/ul&gt;</div></div>
+
+<p>PHP:</p>
+
+<div class="w3-code w3-border notranslate"><div>
+    &lt;ul&gt;<br>&lt;?php <br>for ($i = 0; $i &lt; 10; $i++) {<br>echo(&quot;&lt;li&gt;$i&lt;/li&gt;&quot;);<br>}
+    <br>?&gt;<br>&lt;/ul&gt;</div></div>
+
+<p>Classic ASP:</p>
+
+<div class="w3-code w3-border notranslate"><div>
+&lt;ul&gt;<br>&lt;%for i = 0 to 10%&gt;<br>&lt;li&gt;&lt;%=i%&gt;&lt;/li&gt;<br>&lt;%next%&gt;<br>
+&lt;/ul&gt;&nbsp;
+</div></div>
+<hr>
+<h2>Razor Helpers</h2>
+<p>ASP.NET helpers are components that can be accessed by single lines of 
+Razor code.</p>
+<p>You can build your own helpers using Razor syntax, or 
+use built-in ASP.NET helpers.</p>
+<p>Below is a short description of some useful Razor helpers:</p>
+<ul>
+  <li>Web Grid</li>
+  <li>Web Graphics</li>
+  <li>Google Analytics</li>
+  <li>Facebook Integration</li>
+  <li>Twitter 
+Integration</li>
+  <li>Sending Email</li>
+  <li>Validation</li>
+</ul>
+<hr>
+
+<h2>Razor Programming Languages</h2>
+<p>Razor supports both C# (C sharp) and VB (Visual Basic).</p>
+<br>
+    </div>
+    <div class="asp">
+        <div class="w3-panel w3-info intro">
+            <p>ASP is an old (but still powerful) tool for making dynamic Web pages.</p>
+            <p>ASP is a technology (much like PHP) for executing scripts on a web server.</p>
+            <p>In this tutorial you will learn all you need to know about ASP.</p>
+            </div>
+            
+            <hr>
+            
+            <h2>Easy Learning with &quot;Show Example&quot;</h2>
+            <p>This ASP tutorial contains hundreds of examples.</p>
+            <p>Our &quot;Show Example&quot; tool makes it easy to learn ASP, because it shows ASP  
+            code with parallel HTML output.</p>
+            <div class="w3-example">
+            <h3>Example</h3>
+            <div class="w3-code notranslate">
+            &lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>
+            &lt;body&gt;<br>
+            <span class="marked">&lt;%<br>
+            response.write(&quot;My first ASP script!&quot;)<br>
+            %&gt;</span><br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;
+            </div>
+            <a target="_blank" href="showasp.asp?filename=demo_intro" class="w3-btn w3-margin-bottom">Show Example &raquo;</a>
+            </div>
+            <p><b>Click on the &quot;Show Example&quot; button to see how it works!</b></p>
+            <hr>
+            
+            <h2>What is ASP?</h2>
+            <ul>
+            <li>ASP stands for <b>A</b>ctive <b>S</b>erver <b>P</b>ages</li> 
+            <li>ASP is a Microsoft Technology</li>
+            <li>ASP is a program that runs inside a web server</li>
+            </ul>
+            <hr>
+            
+            <h2>What is an ASP File?</h2>
+            <ul>
+            <li>An ASP file has the file extension &quot;.asp&quot;</li>
+             <li>An ASP file is just the same as an HTML file</li> 
+            <li>An ASP file can contain server scripts in addition to HTML</li> 
+            <li>Server scripts in an ASP file are executed on the server</li> 
+            </ul>
+            <hr>
+            <div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+            <!-- MidContent -->
+            <!-- <p class="adtext">Advertisement</p> -->
+            
+              <div id="adngin-mid_content-0"></div>
+              
+            </div>
+            <hr>
+            <h2>What can ASP do for you?</h2>
+            <ul>
+              <li>Edit, change, add content, or customize any web page</li>
+              <li>Respond to user queries or data submitted from HTML forms</li>
+              <li>Access databases or other server data and return results to a browser</li>
+              <li>Provide web security since ASP code cannot be viewed in a browser</li>
+              <li>Offer simplicity and speed</li>
+            </ul>
+            <hr>
+            
+            <h2>How Does it Work?</h2>
+            <p>When a browser requests a normal HTML file, the server just returns the file.</p>
+            <p>When a browser requests an ASP file, the server passes the request to the ASP engine 
+            which reads the ASP file and executes the server scripts in the file.</p>
+            <p>Finally the ASP file is returned to the browser as plain HTML.</p>
+            <hr>
+            
+            <h2>ASP References</h2>
+            <p>At W3Schools you will find complete ASP references about built-in objects and 
+            components, and their properties and methods.</p>
+            <p><a href="asp_ref_response.asp">ASP References</a></p>
+            <hr>
+            
+            <h2>ASP Examples</h2>
+            <p>Learn by 100 examples! Because ASP scripts are executed on the server, you
+            can not view ASP code in a browser, you will only see the output from ASP which
+            is plain HTML. At W3Schools every example displays the hidden ASP code. This
+            will make it easier for you to understand how it works.</p>
+    </div>
+    <hr>
+    <hr>
+    <!-- <div class="commentbox">
+      <h2>Add your comments</h2>
+      <form>
+        <input class="cmtinput" type="text" placeholder="please add your name and then comment" id="name">
+        <input type="button" value="Submit" onclick='manageData()'>
+      </form>
+      <div id="msg"></div>
+      
+      <h2>List</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>S.No</td>
+            <td>comment</td>
+            <td>Action</td>
+          </tr>
+        <thead>
+        <tbody id="root">
+        
+        <tbody>
+      </table>
+    </div> -->
+    <div class="feedb">
+      <button class="buttonf button2f"><a href="../feedback/index.php">FeedBack</a></button>
+    <button class="buttonf button2f"><a href="about.html">About Us</a></button>
+    <button class="buttonf button2f"><a href="../contactus/index.html">Contact us</a></button>
+    </div>
+</body>
+<script src="../js/index.js"></script>
+
+</html>

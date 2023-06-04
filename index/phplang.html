@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/phpstyle.css" />
+    <title>PHP Tutorial</title>
+  </head>
+  <body>
+    <section class="main-box">
+      <div class="partone"></div>
+      <div class="parttwo">
+        <p>
+          This tutorial will teach you all about PHP and PHP 5 from very basic
+          for beginner to advance.
+        </p>
+
+        <h2>What is PHP ?</h2>
+        <p>
+          PHP is a scripting language, supports object oriented feature. PHP is
+          used to create dynamic web pages or web applications.
+        </p>
+        <p>
+          PHP can be deployed onarray Web server operating system or platform
+          (such as Windows, Unix, Linux etc). PHP also supports various
+          databases (such as Oracle, MySQL, Informix, and Sybase).
+        </p>
+        <p>
+          You can use PHP by embedding PHP scripts in HTML (Hyper Text Markup
+          Languages) pages. You can integrate PHP with AJAX in creating Web
+          applications that run extremely fast on the latest versions of
+          browsers.
+        </p>
+
+        <h2>What is a PHP File ?</h2>
+        <p>PHP file can consists of HTML, CSS, JavaScript, and PHP code.</p>
+
+        <h2>PHP File extensions</h2>
+        <p>You can save a PHP file with one of the following extensions :</p>
+        <ul>
+          <li>.php</li>
+          <li>.php3</li>
+          <li>.phtml</li>
+          <li>.ph3</li>
+          <li>.ph4</li>
+          <li>.php5</li>
+          <li>.ph5</li>
+        </ul>
+
+        <h2>Characteristics of PHP</h2>
+        <p>Here are the characteristics of PHP:</p>
+        <ul>
+          <li>PHP is simple</li>
+          <li>PHP is secure</li>
+          <li>PHP is efficient</li>
+          <li>PHP is flexible</li>
+          <li>PHP is familiar</li>
+        </ul>
+
+        <h2>What to Learn before PHP ?</h2>
+        <p>
+          Before start learning PHP, you must have basic understanding on HTML,
+          CSS, andJavaScript.
+        </p>
+
+        <h2>What PHP can Do ?</h2>
+        <p>
+          PHP can do a lot of task such as outputting images, files, etc. PHP
+          also helps to upload files to the server.
+        </p>
+
+        <h2>Why to Learn PHP ?</h2>
+        <p>Programmer loves PHP because of these reasons:</p>
+        <ul>
+          <li>runs on various platform</li>
+          <li>supports wide range of databases</li>
+          <li>compatible with almost all servers</li>
+          <li>runs efficiently on server side</li>
+        </ul>
+        <p>Here is a simple PHP example:</p>
+        <div class="program_box linedeco">
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;PHP and PHP5 Tutorial&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php
+   echo "&lt;h1&gt;PHP and PHP 5 Tutorial&lt;/h1&gt;";
+   echo "You are Learning PHP and PHP 5 at codescracker.com&lt;br&gt;";
+   echo "PHP is fun!. You will enjoy learning PHP.&lt;br&gt;";
+?&gt; 
+
+&lt;/body&gt;
+&lt;/html&gt;</pre
+          >
+        </div>
+        <p>
+          To know how to save and run the above PHP example, refer to
+          <a href="/php/php-environment-setup.htm">PHP Environment Setup</a> to
+          understand how to implement PHP in your computer system step by step.
+        </p>
+        <p>
+          Save the above file with <b>.php</b> extension and open it in your
+          browser, the web page will look like:
+        </p>
+        <div class="img_box">
+         <img src="../img/php-tutorial1.jpg" alt="">
+        </div>
+        <p>Here is one more PHP example:</p>
+        <div class="program_box linedeco">
+          <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+   &lt;title&gt;PHP and PHP5 Tutorial&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php
+   $str1 = "PHP and PHP5 Tutorial";
+   $str2 = "codescracker.com";
+
+   echo "&lt;h1&gt;$str1&lt;/h1&gt;";
+   echo "You are Learning PHP and PHP 5 at $str2";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre
+          >
+        </div>
+        <p>Here is the output of this PHP example:</p>
+        <div class="img_box">
+          <img src="../img/php5-tutorial2.jpg" alt="php tutorial ">
+        </div>
+        <p>
+          You will learn all about PHP and PHP 5 one by one in this tutorial
+          series.
+        </p>
+
+        <h2>Audience</h2>
+        <p>
+          This PHP tutorial series is designed and developed by professional PHP
+          programmer and will help to all those PHP lover who are interested to
+          practice and learn PHP with its tutorial and codes.
+        </p>
+        <p>
+          Here we have included a lot of PHP codes in each and every chapter
+          where required with its output and explanation.
+        </p>
+        <p>
+          Therefore, you can follow this PHP tutorial to get deep understanding
+          about PHP.
+        </p>
+
+        <h2>Prerequisites</h2>
+        <p>
+          Before start learning PHP, you must have some prior knowledge about
+          basic computer skills and HTML.
+        </p>
+        <p>
+          If you have some prior knowledge of how to program, then it becomes
+          too easy to learn PHP.
+        </p>
+        <p>Here you will learn about the if, elseif, and the else statement in PHP with examples.</p>
+
+        <h2>PHP if Statement</h2>
+        <p>PHP if statement is used to execute a block of code if the specified condition is true. Here is the general form to use if statement in 
+        PHP:</p>
+        <div class="program_box">
+        <pre>if(condition)
+        {
+           code to be executed here, if the condition evaluates to true;
+        }</pre>
+        </div>
+        
+        <h2>PHP if Example</h2>
+        <p>Here is an example uses if statement in PHP. This example will output "Have a Nice Day from CodesCracker.com" if the current time (HOUR) is 
+        less than 20:</p>
+        <div class="program_box">
+        <pre>&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+        
+        &lt;?php
+           $t = date("H");
+           
+           if($t &lt; "20")
+           {
+              echo "Have a Nice Day from codescracker.com";
+           }
+        ?&gt;
+        
+        &lt;/body&gt;
+        &lt;/html&gt;</pre>
+        </div>
+        <P>Here is the output produced by the above PHP script:</p>
+        <div class="img_box">
+        <img data-src="/php/images/php_if_statement.jpg" class="lazyload" alt="PHP if Statement">
+        </div>
+        <p>Let's take one more example to understand how if statement works in PHP programming.</p>
+        <div class="program_box">
+        <pre>&lt;html&gt;
+        &lt;head&gt;
+           &lt;title&gt;PHP if Example - CodesCracker&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;?php 
+           $var1 = "Codes";
+           $fname = "Codes";
+           $var2 = "Cracker";
+           $lname = "Cracker";
+           $n1 = 10;
+           $n2 = 20;
+           if($var1 == $fname)
+           {
+              echo "Codes is equal to Codes";
+           }
+           if($var1 == $var2)
+           {
+              echo "Codes is equal to Cracker";
+           }
+           if($n1&gt;$n2)
+           {
+              echo "10 is greater than 20";
+           }
+        ?&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</pre>
+        </div>
+        <p>As you can see from the above PHP if statement example code, when the condition of the if statement evaluates to 
+        be true, then the content inside that if statement will be executed, otherwise the content inside it will be skipped
+        and will not be executed.</p>
+        <p>Let's take the first if statement that contains</p>
+        <div class="program_box">
+        <pre>if($var1 == $fname)
+        {
+           echo "Codes is equal to Codes";
+        }</pre>
+        </div>
+        <p>As $var1 contains "Codes" and $fname also contains "Codes", therefore the above code fragment will become.</p>
+        <div class="program_box">
+        <pre>if("Codes" == "Codes")
+        {
+           echo "Codes is equal to Codes";
+        }</pre>
+        </div>
+        <p>As you can see from the above code fragment, the if statement evaluates to be true, therefore the statement:</p>
+        <div class="program_box">
+        <pre>echo "Codes is equal to Codes";</pre>
+        </div>
+        <p>will be executed and will print <b>Codes is equal to Codes</b> as output.</p>
+        <p>Here is the sample output produced by the above PHP if statement example.</p>
+        <div class="img_box">
+        <img data-src="/php/images/php-if-example.jpg" class="lazyload" alt="php if example">
+        </div>
+        <h2>Try it yourself</h2>
+        <div class="try">
+         <div data-pym-src=
+ "https://www.jdoodle.com/embed/v0/4eOe">
+     </div>
+   
+     
+     <script src=
+ "https://www.jdoodle.com/assets/jdoodle-pym.min.js"
+         type="text/javascript">
+     </script>
+     </div>
+        
+        <h2>PHP if-else Statement</h2>
+        <p>PHP if-else statement is similar to the PHP if statement. But in PHP if-else statement, there is an optional else statement available to be 
+        executed if the specified condition evaluates to false.</p>
+        <p>In other word, PHP if-else statement is used executed a block of code (present in the if block) only if the specified condition evaluates
+        to true, otherwise another block of code (present in the else block) will be executed. Here is the general form to use if-else statement in PHP:</p>
+        <div class="program_box">
+        <pre>if(condition)
+        {
+           code to be executed here, if the condition is true;
+        }
+        else
+        {
+           code to be executed here, if the condition is false;
+        }</pre>
+        </div>
+        
+        <h2>PHP if-else Example</h2>
+        <p>Here is an example, uses if-else statement in PHP. This example will output "Have a Nice Day from CodesCracker.com" if the current time 
+        is less than 20, and "Have a Nice Night from CodesCracker.com" otherwise:</p>
+        <div class="program_box">
+        <pre>&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+        
+        &lt;?php
+           $t = date("H");
+           
+           if($t &lt; "20")
+           {
+              echo "Have a Nice Day from codescracker.com";
+           }
+           else
+           {
+              echo "Have a Nice Night from codescracker.com";
+           }
+        ?&gt;
+        
+        &lt;/body&gt;
+        &lt;/html&gt;</pre>
+        </div>
+        <p>Below is the output of this PHP script:</p>
+        <div class="img_box">
+        <img data-src="/php/images/php_if_statement.jpg" class="lazyload" alt="PHP if...else Statement">
+        </div>
+        <p>Let's take one more example demonstrating the if-else statement in PHP:</p>
+        <div class="program_box">
+        <pre>&lt;html&gt;
+        &lt;head&gt;
+           &lt;title&gt;PHP if-else Example - CodesCracker&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;?php 
+           $var1 = "Codes";
+           $fname = "Codes";
+           $var2 = "Cracker";
+           $lname = "Cracker";
+           $n1 = 10;
+           $n2 = 20;
+           // first if-else statement
+           if($var1 == $fname)
+           {
+              echo "Codes is equal to Codes";
+           }
+           else 
+           {
+              echo "Codes is not equal to Codes";
+           }
+           echo "&lt;br/&gt;";
+           // second if-else statement
+           if($var1 == $var2)
+           {
+              echo "Codes is equal to Cracker";
+           }
+           else 
+           {
+              echo "Codes is not equal to Cracker";
+           }
+           echo "&lt;br/&gt;";
+           // third if-else statement
+           if($n1&gt;$n2)
+           {
+              echo "10 is greater than 20";
+           }
+           else 
+           {
+              echo "10 is less than 20";
+           }
+        ?&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</pre>
+        </div>
+        <p>As you can see from the program given above, when the condition of the if statement evaluates to be true, then 
+        the content inside it will be executed, otherwise the content present inside the else statement of that if statement
+        will be executed.</p>
+        <p>Here is the sample output produced by the above if-else statement example code in PHP</p>
+        <div class="img_box">
+        <img data-src="/php/images/php-if-else.jpg" class="lazyload" alt="php if else">
+        </div>
+        
+        <h2>PHP if-elseif-else Statement</h2>
+        <p>PHP if-elseif-else statement is used to perform some action based on more than one condition. You can use PHP if-elseif-else statement
+        to specify a new condition to be tested, if the first condition evaluates to be false. Here is the general form of PHP if-elseif-else statement:</p>
+        <div class="program_box">
+        <pre>if(condition1)
+        {
+           code to be executed here, if condition1 is true;
+        }
+        elseif(condition1)
+        {
+           code to be executed here, if condition2 is true;
+        }
+        else
+        {
+           code to be executed here, if both the condition is false;
+        }</pre>
+
+        </div>
+
+        <H2>Try it yourself</H2>
+        <div class="try">
+         <div data-pym-src=
+ "https://www.jdoodle.com/embed/v0/4eOe">
+     </div>
+   
+     
+     <script src=
+ "https://www.jdoodle.com/assets/jdoodle-pym.min.js"
+         type="text/javascript">
+     </script>
+     </div>
+        
+        <h2>PHP if-elseif-else Example</h2>
+        <p>Here is an example uses PHP if-elseif-else statement. This example example will output "Have a Nice Morning from CodesCracker.com" if 
+        the current time is less than 10, and "Have a Nice Day from CodesCracker.com" if the current time is less than 20. Otherwise it will output
+        "Have a Nice Night from CodesCracker.com"</p>
+        <div class="program_box">
+        <pre>&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+        
+        &lt;?php
+           $t = date("H");
+           if($t &lt; "10")
+           {
+              echo "Have a Nice Morning from codescracker.com";
+           }
+           elseif($t &lt; "20")
+           {
+              echo "Have a Nice Day from codescracker.com";
+           }
+           else
+           {
+              echo "Have a Nice Night from codescracker.com";
+           }   
+        ?&gt;
+        
+        &lt;/body&gt;
+        &lt;/html&gt;</pre>
+        </div>
+        <p>It will display the following result</p>
+        <div class="img_box">
+        <img data-src="/php/images/php_if_statement.jpg" class="lazyload" alt="PHP if...else Statement">
+        </div>
+        <p>Here is another example on if-elseif-else statement in PHP.</p>
+        <div class="program_box">
+        <pre>&lt;html&gt;
+        &lt;head&gt;
+           &lt;title&gt;PHP if-elseif-else Example - CodesCracker&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;?php 
+           $n1 = 20;
+           $n2 = 30;
+           $n3 = 40;
+           $n4 = 20;
+           if($n1&gt;$n2)
+           {
+              echo "20 is greater than 30";
+           }
+           elseif($n1&gt;$n3)
+           {
+              echo "20 is greater than 40";
+           }
+           elseif($n1==$n4)
+           {
+              echo "20 is equal to 20";
+           }
+           elseif($n1&gt;$n4)
+           {
+              echo "20 is greater than 20";
+           }
+           else 
+           {
+              echo "none";
+           }
+        ?&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</pre>
+        </div>
+        <p>As you can see from the above PHP example of if-elseif-else statement, if the condition of if statement evaluates 
+        to be true, then the content inside it will be executed and all the next elseif and else statement will be skipped,
+        and if the condition of the if statement evaluates to be false, then the program control goes to the elseif statement,
+        and check if its condition evaluates to be true, if yes, then the content inside that elseif will be executed and the 
+        next all statement will be skipped, this control goes until the last conditional statement, that is, else.</p>
+        <p>In case, if none of the if, or elseif statement's condition evaluates to be true, then the content inside the else 
+        statement will be executed.</p>
+        <p>Here is the sample output produced by the above if-elseif-else statement in PHP.</p>
+        <div class="img_box">
+        <img data-src="/php/images/php-if-elseif-else-example.jpg" class="lazyload" alt="php if elseif else example">
+      </div>
+
+      <H2>Try it yourself</H2>
+      <hr>
+    <hr>
+    <!-- <div class="commentbox">
+      <h2>Add your comments</h2>
+      <form>
+        <input class="cmtinput" type="text" placeholder="please add your name and then comment" id="name">
+        <input type="button" value="Submit" onclick='manageData()'>
+      </form>
+      <div id="msg"></div>
+      
+      <h2>List</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>S.No</td>
+            <td>comment</td>
+            <td>Action</td>
+          </tr>
+        <thead>
+        <tbody id="root">
+        
+        <tbody>
+      </table>
+    </div> -->
+    </section>
+    <div class="feedb">
+      <button class="buttonf button2f"><a href="../feedback/index.php">FeedBack</a></button>
+    <button class="buttonf button2f"><a href="about.html">About Us</a></button>
+    <button class="buttonf button2f"><a href="../contactus/index.html">Contact us</a></button>
+    </div>
+    
+</body>
+<script src="../js/index.js"></script>
+ 
+</html>

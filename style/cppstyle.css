@@ -1,0 +1,67 @@
+.mbody {
+  padding-left: 80px;
+}
+.code {
+  color: white;
+  background-color: black;
+  width: 60%;
+  border-radius: 2px;
+}
+.linedeco {
+  border: 1px solid black;
+  width: 50%;
+  background-color: aliceblue;
+  border-radius: 3px;
+}
+.expl {
+  font-size: 18px;
+}
+h2 {
+  /* background-color: rgb(155, 226, 155); */
+  border-radius: 3px 4px;
+  width: 20%;
+  text-align: center;
+  color: green;
+}
+.tryit {
+  color: white;
+  border: 1px solid black;
+  width: 100px;
+  background-color: rgb(31, 54, 31);
+}
+.cmtinput {
+  height: 70px;
+  width: 350px;
+  text-align: start;
+}
+
+.feedb{
+  display: flex;
+  border: 2px solid black;
+  justify-content: center;
+  background-color: rgb(222, 229, 236);
+
+}
+
+.buttonf {
+  background-color: #4e4caf; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.buttonf a{
+  text-decoration: none;
+  color: white;
+}
+.button2f:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Tutorial</title>
+    <link rel="stylesheet" href="../style/publicclass.css">
+</head>
+<body>
+    <div class="intro">
+        <h1>Python <span>Introduction</span></h1>
+
+<hr>
+
+<h2>What is Python?</h2>
+<p>Python is a popular programming language. It was created by Guido van Rossum, 
+and released in 1991.</p>
+
+<p>It is used for:</p>
+
+<ul>
+<li>web development (server-side), </li>
+<li>software development, </li>
+<li>mathematics,</li>
+<li>system scripting.</li>
+</ul>
+
+<h3>What can Python do?</h3>
+<ul>
+<li>Python can be used on a server to create web applications.</li>
+<li>Python can be used alongside software to create workflows.</li>
+<li>Python can connect to database systems. It can also read and modify files.</li>
+<li>Python can be used to handle big data and perform complex mathematics.</li>
+<li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+</ul>
+
+<h3>Why Python?</h3>
+<ul>
+<li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
+<li>Python has a simple syntax similar to the English language.</li>
+<li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
+<li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
+<li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
+</ul>
+
+<h3>Good to know</h3>
+<ul>
+<li>The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.</li>
+<li>In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files.</li>
+</ul>
+
+<h3>Python Syntax compared to other programming languages</h3>
+<ul>
+<li>Python was designed for readability, and has some similarities to the English language with influence from mathematics.</li>
+<li>Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.</li>
+<li>Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.</li>
+</ul>
+    </div>
+    <div class="syntax">
+        <h2>Python Indentation</h2>
+
+<p>Indentation refers to the spaces at the beginning of a code line.</p>
+<p>Where in other programming languages the indentation in code is for readability 
+only, the indentation in Python is very important.</p>
+<p>Python uses indentation to indicate a block of code.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  if 5 &gt; 2:<br>&nbsp;
+print("Five is greater than two!")
+</div> <br>
+<a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.jdoodle.com/python3-programming-online/">Try it Yourself &raquo;</a><br>
+</div>try
+
+<p>Python will give you an error if you skip the indentation:</p>
+
+<div class="w3-example w3-pale-red">
+<h3>Example</h3>
+  <p>Syntax Error:</p>
+<div class="w3-code notranslate pythonHigh w3-border-red">
+if 5 &gt; 2:<br>
+print("Five is greater than two!")
+</div><br>
+<a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.jdoodle.com/python3-programming-online/">Try it Yourself &raquo;</a><br>
+</div>
+
+<p>The number of spaces is up to you as a programmer, but it has 
+to be at least one.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate pythonHigh">
+  if 5 &gt; 2:<br>&nbsp;print("Five is greater than two!")&nbsp;
+<br>if 5 &gt; 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print("Five is greater than two!")&nbsp;
+</div><br>
+<a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.jdoodle.com/python3-programming-online/">Try it Yourself &raquo;</a>
+</div>
+
+<p>You have to use the same number of spaces in the same block of code, 
+otherwise Python will give you an error:</p>
+
+<div class="w3-example w3-pale-red">
+<h3>Example</h3>
+  <p>Syntax Error:</p>
+<div class="w3-code notranslate pythonHigh w3-border-red">
+if 5 &gt; 2:<br>
+&nbsp;print("Five is greater than two!")
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print(&quot;Five is greater than 
+  two!&quot;)</div><br>
+<a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.jdoodle.com/python3-programming-online/">Try it Yourself &raquo;</a>
+</div>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+<!-- <p class="adtext">Advertisement</p> -->
+
+  <div id="adngin-mid_content-0"></div>
+  
+</div>
+<hr>
+
+<a id="python_variables"></a>
+<h2>Python Variables</h2>
+
+<p>In Python, variables are created when you assign a value to it:
+<div class="w3-example">
+<h3>Example</h3>
+<p>Variables in Python:</p>
+<div class="w3-code notranslate pythonHigh">
+  x = 5<br>y = &quot;Hello, World!&quot;
+</div><br>
+<a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.jdoodle.com/python3-programming-online/">Try it Yourself &raquo;</a>
+</div>
+
+<p>Python has no command for declaring a variable.</p>
+<p>You will learn more about variables in the <a href="python_variables.asp">
+Python Variables</a> chapter.</p>
+<hr>
+<a id="python_comments"></a>
+<h2>Comments</h2>
+
+<p>Python has commenting capability for the purpose of in-code documentation.</p>
+<p>Comments start with a #, and Python will render the rest of the line as a comment:
+<div class="w3-example">
+<h3>Example</h3>
+<p>Comments in Python:</p>
+<div class="w3-code notranslate pythonHigh">
+#This is a comment.<br>
+print("Hello, World!")
+</div><br>
+<a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.jdoodle.com/python3-programming-online/">Try it Yourself &raquo;</a>
+</div>
+
+<a id="exercises"></a>
+<hr>
+<form autocomplete="off" id="w3-exerciseform" action="exercise.asp?filename=exercise_syntax1" method="post" target="_blank">
+<h2>Test Yourself With Exercises</h2>
+<div class="exercisewindow">
+<h2>Exercise:</h2>
+<p>Insert the missing part of the code below to output "Hello World".</p>
+<div class="exerciseprecontainer">
+<pre>
+<input name="ex1" maxlength="5" style="width: 54px;">("Hello World")
+</pre>
+</div>
+<br>
+    </div>
+    <div class="datatype">
+        <h1>Python <span class="color_h1">Data Types</span></h1>
+        <h2>Built-in Data Types</h2>
+        <p>In programming, data type is an important concept.</p>
+        <p>Variables can store data of different types, and different types can do 
+        different things.</p>
+        <p>Python has the following data types built-in by default, in these categories:</p>
+        <table class="w3-table">
+          <tr>
+            <td style="width:160px;">Text Type:</td>
+            <td><code class="w3-codespan">str</code></td>
+          </tr>
+          <tr>
+            <td>Numeric Types:</td>
+            <td><code class="w3-codespan">int</code>, <code class="w3-codespan">float</code>,
+            <code class="w3-codespan">complex</code></td>
+          </tr>
+          <tr>
+            <td>Sequence Types:</td>
+            <td><code class="w3-codespan">list</code>, <code class="w3-codespan">tuple</code>, 
+            <code class="w3-codespan">range</code></td>
+          </tr>
+          <tr>
+            <td>Mapping Type:</td>
+            <td><code class="w3-codespan">dict</code></td>
+          </tr>
+          <tr>
+            <td>Set Types:</td>
+            <td><code class="w3-codespan">set</code>, <code class="w3-codespan">frozenset</code></td>
+          </tr>
+          <tr>
+            <td>Boolean Type:</td>
+            <td><code class="w3-codespan">bool</code></td>
+          </tr>
+          <tr>
+            <td>Binary Types:</td>
+            <td><code class="w3-codespan">bytes</code>, <code class="w3-codespan">bytearray</code>, 
+            <code class="w3-codespan">memoryview</code></td>
+          </tr>
+        </table>
+        
+        <hr>
+        <h2>Getting the Data Type</h2>
+        
+        <p>You can get the data type of any object by using the <code class="w3-codespan">type()</code> function:</p>
+        
+        <div class="w3-example">
+        <h3>Example</h3>
+          <p>Print the data type of the variable x:</p>
+        <div class="w3-code notranslate pythonHigh">
+        x = 5<br>
+        print(type(x))
+        </div><br>
+        <a target="_blank" class="w3-btn w3-margin-bottom" href="https://www.jdoodle.com/python3-programming-online/">Try it Yourself &raquo;</a>
+        </div>
+        
+        <hr>
+        
+        <h2>Setting the Data Type</h2>
+        
+        <p>In Python, the data type is set when you assign a value to a variable:</p>
+        <style>
+        #dtref td:nth-child(1) {
+          font-family: Consolas,"courier new";
+          font-size: 110%;
+        }
+        </style>
+        <table id="dtref" class="ws-table-all notranslate">
+        <tr>
+        <th style="min-width:350px">Example</th>
+        <th>Data Type</th><br>
+        <th style="width:90px">Try it</th>
+        </tr>
+        <tr>
+        <td>x = &quot;Hello World&quot;</td>
+        <td>str</td><br>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        <tr>
+        <td>x = 20</td>
+        <td>int</td><br>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        <tr>
+        <td>x = 20.5</td>
+        <td>float</td><br>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        <tr>
+        <td>x = 1j</td>
+        <td>complex</td><br>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        <tr>
+        <td>x = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</td>
+        <td>list</td><br>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+          <tr>
+        <td>x = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)</td>
+        <td>tuple</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = range(6)</td>
+        <td>range</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = {&quot;name&quot; : &quot;John&quot;, &quot;age&quot; : 36}</td>
+        <td>dict</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}</td>
+        <td>set</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = frozenset({&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;})</td>
+        <td>frozenset</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = True</td>
+        <td>bool</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = b&quot;Hello&quot;</td>
+        <td>bytes</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = bytearray(5)</td>
+        <td>bytearray</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+        <tr>
+        <td>x = memoryview(bytes(5))</td>
+        <td>memoryview</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        </table>
+        
+        <hr>
+        <div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+        <!-- MidContent -->
+        <!-- <p class="adtext">Advertisement</p> -->
+        
+          <div id="adngin-mid_content-0"></div>
+          
+        </div>
+        <hr>
+        
+        <h2>Setting the Specific Data Type</h2>
+        <p>If you want to specify the data type, you can use the following 
+        constructor functions:</p>
+        
+        <table id="dtref" class="ws-table-all notranslate">
+        <tr>
+        <th style="min-width:450px">Example</th>
+        <th>Data Type</th>
+        <th style="width:100px">Try it</th>
+        </tr>
+        <tr>
+        <td>x = str(&quot;Hello World&quot;)</td>
+        <td>str</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        <tr>
+        <td>x = int(20)</td>
+        <td>int</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        <tr>
+        <td>x = float(20.5)</td>
+        <td>float</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        <tr>
+        <td>x = complex(1j)</td>
+        <td>complex</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        <tr>
+        <td>x = list((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;))</td>
+        <td>list</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+          <tr>
+        <td>x = tuple((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;))</td>
+        <td>tuple</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = range(6)</td>
+        <td>range</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = dict(name=&quot;John&quot;, age=36)</td>
+        <td>dict</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = set((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;))</td>
+        <td>set</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = frozenset((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;))</td>
+        <td>frozenset</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = bool(5)</td>
+        <td>bool</td>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = bytes(5)</td>
+        <td>bytes</td><br>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+          <tr>
+        <td>x = bytearray(5)</td>
+        <td>bytearray</td><br>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+          </tr>
+        <tr>
+         <br> <td>x = memoryview(bytes(5))</td>
+        <td>memoryview</td><br>
+        <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="https://www.jdoodle.com/python3-programming-online/">Try it &raquo;</a></td>
+        </tr>
+        </table>
+        
+        <a id="exercises"></a>
+        <hr>
+        <form autocomplete="off" id="w3-exerciseform" action="exercise.asp?filename=exercise_datatypes1" method="post" target="_blank">
+        <h2>Test Yourself With Exercises</h2>
+        <div class="exercisewindow">
+        <h2>Exercise:</h2>
+        <p>The following code example would print the data type of x, what data type would that be?</p>
+        <div class="exerciseprecontainer">
+        <pre>
+        x = 5
+        print(type(x))
+        <input name="ex1" maxlength="3" style="width: 35px;">
+        </pre>
+        </div>
+        <br>
+    </div>
+    <hr>
+    <hr>
+    <!-- <div class="commentbox">
+      <h2>Add your comments</h2>
+      <form>
+        <input class="cmtinput" type="text" placeholder="please add your name and then comment" id="name">
+        <input type="button" value="Submit" onclick='manageData()'>
+      </form>
+      <div id="msg"></div>
+      
+      <h2>List</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>S.No</td>
+            <td>comment</td>
+            <td>Action</td>
+          </tr>
+        <thead>
+        <tbody id="root">
+        
+        <tbody>
+      </table>
+    </div> -->
+    <div class="feedb">
+      <button class="buttonf button2f"><a href="../feedback/index.php">FeedBack</a></button>
+    <button class="buttonf button2f"><a href="about.html">About Us</a></button>
+    <button class="buttonf button2f"><a href="../contactus/index.html">Contact us</a></button>
+    </div>
+</body>
+<script src="../js/index.js"></script>
+</html>
